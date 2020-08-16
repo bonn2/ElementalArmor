@@ -1,0 +1,21 @@
+name: ElementalArmor
+version: @version@
+main: bonn2.elementalarmor.Main
+api-version: "1.16"
+authors: [bonn2]
+description: Adds custom armor sets with charms for Enigma Towns on play.minecore.ca
+depend:
+  - ArmorEquipEvent
+commands:
+  givearmor:
+    description: Gives a player a custom armor set
+    usage: /givearmor <player> <type> //TODO [piece] [charm]
+    permission: elementalarmor.admin.givearmor
+  setcharm:
+    description: Set the charm on an item
+    usage: /setcharm <player> <charm>
+    permission: elementalarmor.admin.setcharm
+  givecharm:
+    description: Give a player a charm item
+    usage: /givecharm <player> <charm>
+    permission: elementalarmor.admin.givecharm

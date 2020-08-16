@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="C:\Users\bbonifas\IdeaProjects\ElementalArmor">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1fbjVansZ1aJWRPUuU0Q3nGGOvw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager">
+    <configuration name="ElementalArmor build" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" value="ElementalArmor build" />
+        <option name="externalProjectPath" value="C:\Users\bbonifas\IdeaProjects\ElementalArmor" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="" />
+      <created>1596493710291</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596493710291</updated>
+      <workItem from="1596493713469" duration="307000" />
+      <workItem from="1596494149336" duration="10818000" />
+      <workItem from="1596560742855" duration="4769000" />
+      <workItem from="1596576067124" duration="38477000" />
+      <workItem from="1597091805648" duration="2154000" />
+      <workItem from="1597249973269" duration="708000" />
+      <workItem from="1597280827705" duration="601000" />
+      <workItem from="1597357238899" duration="477000" />
+      <workItem from="1597540531628" duration="4648000" />
+      <workItem from="1597593408778" duration="583000" />
+      <workItem from="1597594075416" duration="103000" />
+      <workItem from="1597594205905" duration="636000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1597541222815">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1597541222815" />
+    <state x="321" y="77" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1596493763288">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="321" y="77" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.680@0.0.1280.680" timestamp="1596493763288" />
+    <state x="424" y="210" width="432" height="267" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1596831609970">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="424" y="210" width="432" height="267" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1596831609970" />
+    <state x="430" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1596945251297">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="430" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1596945251297" />
+    <state x="361" y="226" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1596842896247">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="361" y="226" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1596842896247" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1596580578214">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1596580578214" />
+    <state x="503" y="186" width="356" height="272" key="Github.ShareDialog" timestamp="1597592978267">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="503" y="186" width="356" height="272" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" timestamp="1597592978267" />
+    <state x="348" y="39" key="Github.UntrackedFilesDialog" timestamp="1597593147421">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="348" y="39" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1597593147421" />
+    <state width="1281" height="111" key="GridCell.Tab.0.bottom" timestamp="1597593370444">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1281" height="111" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1597593370444" />
+    <state width="1281" height="111" key="GridCell.Tab.0.center" timestamp="1597593370444">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1281" height="111" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1597593370444" />
+    <state width="1281" height="111" key="GridCell.Tab.0.left" timestamp="1597593370444">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1281" height="111" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1597593370444" />
+    <state width="1281" height="111" key="GridCell.Tab.0.right" timestamp="1597593370444">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1281" height="111" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1597593370444" />
+    <state width="1281" height="213" key="GridCell.Tab.1.bottom" timestamp="1596587048487">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1281" height="213" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1596587048487" />
+    <state width="1281" height="213" key="GridCell.Tab.1.center" timestamp="1596587048486">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1281" height="213" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1596587048486" />
+    <state width="1281" height="213" key="GridCell.Tab.1.left" timestamp="1596587048486">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1281" height="213" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1596587048486" />
+    <state width="1281" height="213" key="GridCell.Tab.1.right" timestamp="1596587048487">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1281" height="213" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1596587048487" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1596576171674">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1596576171674" />
+    <state x="91" y="2" key="new project wizard" timestamp="1597357613983">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="91" y="2" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1597357613983" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1596502491819">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.68
