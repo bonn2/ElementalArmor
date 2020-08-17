@@ -2,7 +2,6 @@ package bonn2.elementalarmor.listeners;
 
 import bonn2.elementalarmor.Main;
 import bonn2.elementalarmor.util.ArmorManager;
-import bonn2.elementalarmor.util.emums.ArmorType;
 import bonn2.elementalarmor.util.emums.Charm;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;

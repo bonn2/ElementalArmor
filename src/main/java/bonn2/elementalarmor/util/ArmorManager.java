@@ -4,6 +4,9 @@ import bonn2.elementalarmor.Main;
 import bonn2.elementalarmor.util.emums.ArmorPiece;
 import bonn2.elementalarmor.util.emums.ArmorType;
 import bonn2.elementalarmor.util.emums.Charm;
+import bonn2.elementalarmor.util.persistence.PersistentArmorType;
+import bonn2.elementalarmor.util.persistence.PersistentCharmType;
+import org.apache.commons.lang.ObjectUtils;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -13,27 +16,33 @@ import java.util.Collection;
 
 public class ArmorManager {
 
-    private static final NamespacedKey key = new NamespacedKey(Main.plugin, "TYPE");
+    private static final NamespacedKey TYPE = new NamespacedKey(Main.plugin, "TYPE");
+    private static final NamespacedKey CHARM = new NamespacedKey(Main.plugin, "CHARM");
 
     public static boolean isWearingFullSet(Player player, ArmorType type) {
         boolean output = true;
-        for (ItemStack item : player.getInventory().getArmorContents()) {
-            CustomArmor armor = new CustomArmor(item);
-                if (armor.getArmorType().equals(type))
-                    continue;
-            output = false;
+        try {
+            for (ItemStack item : player.getInventory().getArmorContents()) {
+                ArmorType itemType = item.getItemMeta().getPersistentDataContainer().getOrDefault(TYPE, new PersistentArmorType(), ArmorType.NONE);
+                if (itemType.equals(type)) continue;
+                output = false;
+            }
+            return output;
+        } catch (NullPointerException e) {
+            return false;
         }
-        return output;
     }
 
     public static boolean isWearingCharm(Player player, Charm charm) {
         boolean output = false;
         for (ItemStack item : player.getInventory().getArmorContents()) {
-            CustomArmor armor = new CustomArmor(item);
-            if (armor.getCharm().equals(charm)) {
-                output = true;
-                break;
-            }
+            try {
+                Charm itemCharm = item.getItemMeta().getPersistentDataContainer().getOrDefault(CHARM, new PersistentCharmType(), Charm.NONE);
+                if (itemCharm.equals(charm)) {
+                    output = true;
+                    break;
+                }
+            } catch (NullPointerException ignored) {}
         }
         return output;
     }
