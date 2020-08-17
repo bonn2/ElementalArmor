@@ -2,11 +2,14 @@ package bonn2.elementalarmor.listeners;
 
 import bonn2.elementalarmor.Main;
 import bonn2.elementalarmor.util.ArmorManager;
+import bonn2.elementalarmor.util.CustomArmor;
 import bonn2.elementalarmor.util.emums.Charm;
+import com.codingforcookies.armorequip.ArmorEquipEvent;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
 import org.bukkit.util.Vector;
 
@@ -14,9 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DoubleJump implements Listener {
-
-    Main plugin = Main.plugin;
-    List<Player> canJump = new ArrayList<>();
 
     @EventHandler
     public void onDoubleJump(PlayerToggleFlightEvent event) {
@@ -29,6 +29,20 @@ public class DoubleJump implements Listener {
                 Vector vector = player.getLocation().getDirection().multiply(1).setY(1);
                 player.setVelocity(vector);
             }
+        }
+    }
+
+    @EventHandler
+    public void onArmorEquip(ArmorEquipEvent event) {
+        boolean oldHasJumping = ArmorManager.hasCharm(event.getOldArmorPiece(), Charm.JUMPING);
+        boolean newHasJumping = ArmorManager.hasCharm(event.getNewArmorPiece(), Charm.JUMPING);
+        Player player = event.getPlayer();
+        if (oldHasJumping && newHasJumping) {
+            player.setAllowFlight(true);
+        } else if (oldHasJumping && !newHasJumping) {
+            player.setAllowFlight(false);
+        } else if (!oldHasJumping && newHasJumping) {
+            player.setAllowFlight(true);
         }
     }
 }
