@@ -1,10 +1,8 @@
 package bonn2.elementalarmor;
 
-import bonn2.elementalarmor.commands.GiveArmor;
-import bonn2.elementalarmor.commands.GiveArmorTabComplete;
-import bonn2.elementalarmor.commands.SetCharm;
-import bonn2.elementalarmor.commands.SetCharmTabComplete;
+import bonn2.elementalarmor.commands.*;
 import bonn2.elementalarmor.listeners.DoubleJump;
+import bonn2.elementalarmor.listeners.Fireproof;
 import bonn2.elementalarmor.listeners.SlowFall;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -25,8 +23,10 @@ public final class Main extends JavaPlugin {
         Objects.requireNonNull(getCommand("givearmor")).setTabCompleter(new GiveArmorTabComplete());
         Objects.requireNonNull(getCommand("setcharm")).setExecutor(new SetCharm());
         Objects.requireNonNull(getCommand("setcharm")).setTabCompleter(new SetCharmTabComplete());
+        Objects.requireNonNull(getCommand("givecharm")).setExecutor(new GiveCharm());
         getServer().getPluginManager().registerEvents(new SlowFall(), this);
         getServer().getPluginManager().registerEvents(new DoubleJump(), this);
+        getServer().getPluginManager().registerEvents(new Fireproof(), this);
     }
 
     @Override

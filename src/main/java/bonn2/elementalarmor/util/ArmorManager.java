@@ -48,6 +48,14 @@ public class ArmorManager {
         return output;
     }
 
+    public static boolean hasCharm(ItemStack item, Charm charm) {
+        try {
+            return item.getItemMeta().getPersistentDataContainer().getOrDefault(CHARM, new PersistentCharmType(), Charm.NONE).equals(charm);
+        } catch (NullPointerException e) {
+            return false;
+        }
+    }
+
     public static Collection<CustomArmor> getFullSet(ArmorType type) {
         Collection<CustomArmor> set = new ArrayList<>();
         set.add(new CustomArmor(type, ArmorPiece.HELMET));

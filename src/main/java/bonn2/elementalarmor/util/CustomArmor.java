@@ -12,6 +12,7 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
+import org.jetbrains.annotations.NotNull;
 
 public class CustomArmor extends ItemStack {
 
@@ -34,7 +35,7 @@ public class CustomArmor extends ItemStack {
         setItemMeta(temp);
     }
 
-    public CustomArmor(ItemStack item) {
+    public CustomArmor(@NotNull ItemStack item) {
         super(item);
         ItemMeta temp = getItemMeta();
         assert temp != null;
