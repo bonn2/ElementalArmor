@@ -22,13 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Fix NPE and IllegalCopy errors">
+    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="No longer require player to do /fly for double jump to work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/DoubleJump.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/DoubleJump.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/Fireproof.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/Fireproof.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/ArmorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/ArmorManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/CustomArmor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/CustomArmor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/SlowFall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/SlowFall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/emums/Charm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/emums/Charm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +125,7 @@
       <workItem from="1597594075416" duration="103000" />
       <workItem from="1597594205905" duration="2668000" />
       <workItem from="1597607647732" duration="8000" />
-      <workItem from="1597607772199" duration="7890000" />
+      <workItem from="1597607772199" duration="8962000" />
     </task>
     <task id="LOCAL-00001" summary="Fix NPE and IllegalCopy errors">
       <created>1597689706204</created>
@@ -145,7 +141,28 @@
       <option name="project" value="LOCAL" />
       <updated>1597689719870</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fix NPE and IllegalCopy errors">
+      <created>1597701693161</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1597701693161</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fix Charm Names">
+      <created>1597701711342</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1597701711342</updated>
+    </task>
+    <task id="LOCAL-00005" summary="No longer require player to do /fly for double jump to work">
+      <created>1597701748997</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1597701748997</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,7 +181,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix NPE and IllegalCopy errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix NPE and IllegalCopy errors" />
+    <MESSAGE value="Fix Charm Names" />
+    <MESSAGE value="No longer require player to do /fly for double jump to work" />
+    <option name="LAST_COMMIT_MESSAGE" value="No longer require player to do /fly for double jump to work" />
   </component>
   <component name="WindowStateProjectService">
     <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1597541222815">
@@ -203,22 +222,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="348" y="39" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1597598307198" />
-    <state width="1281" height="105" key="GridCell.Tab.0.bottom" timestamp="1597692121580">
+    <state width="1281" height="105" key="GridCell.Tab.0.bottom" timestamp="1597702256990">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="105" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1597692121580" />
-    <state width="1281" height="105" key="GridCell.Tab.0.center" timestamp="1597692121579">
+    <state width="1281" height="105" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1597702256990" />
+    <state width="1281" height="105" key="GridCell.Tab.0.center" timestamp="1597702256990">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="105" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1597692121579" />
-    <state width="1281" height="105" key="GridCell.Tab.0.left" timestamp="1597692121579">
+    <state width="1281" height="105" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1597702256990" />
+    <state width="1281" height="105" key="GridCell.Tab.0.left" timestamp="1597702256990">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="105" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1597692121579" />
-    <state width="1281" height="105" key="GridCell.Tab.0.right" timestamp="1597692121580">
+    <state width="1281" height="105" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1597702256990" />
+    <state width="1281" height="105" key="GridCell.Tab.0.right" timestamp="1597702256990">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="105" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1597692121580" />
+    <state width="1281" height="105" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1597702256990" />
     <state width="1281" height="213" key="GridCell.Tab.1.bottom" timestamp="1596587048487">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -239,10 +258,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597690695358" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1597689733454">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1597701759023">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1597689733454" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1597701759023" />
     <state x="91" y="2" key="new project wizard" timestamp="1597607046503">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

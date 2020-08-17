@@ -3,6 +3,7 @@ package bonn2.elementalarmor.listeners;
 import bonn2.elementalarmor.util.ArmorManager;
 import bonn2.elementalarmor.util.emums.ArmorType;
 import bonn2.elementalarmor.util.Timeout;
+import bonn2.elementalarmor.util.emums.Charm;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -30,7 +31,7 @@ public class SlowFall implements Listener {
     public void onSneak(PlayerToggleSneakEvent event) {
         Player player = event.getPlayer();
         if (event.isSneaking()) {
-            if (ArmorManager.isWearingFullSet(player, ArmorType.AIR)) {
+            if (ArmorManager.isWearingCharm(player, Charm.SLOWFALL)) {
                 if (!player.getWorld().getBlockAt(player.getLocation().subtract(0, 1, 0)).isPassable()) return;
                 if (timeouts.getOrDefault(player.getUniqueId(), new Timeout()).isTimedOut()) {
                     player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 100, 0, true));
@@ -49,34 +50,27 @@ public class SlowFall implements Listener {
     @EventHandler
     public void aboutToLand(PlayerMoveEvent event) {
         Player player = event.getPlayer();
-        if (ArmorManager.isWearingFullSet(player, ArmorType.AIR)) {
+        if (ArmorManager.isWearingCharm(player, Charm.SLOWFALL)) {
             World world = player.getWorld();
             Location currentLoc = event.getTo();
             if (currentLoc == null) return;
             double yVec = currentLoc.getY() - event.getFrom().getY();
             if (yVec >= 0) return;
-            if (world.getBlockAt(currentLoc.clone().subtract(0, 1.5, 0)).isPassable()
-                    && !world.getBlockAt(currentLoc.clone().subtract(0, 2.5, 0)).isPassable()) {
+            if ((world.getBlockAt(currentLoc.clone().subtract(0, 1.5, 0)).isPassable()
+                    && !world.getBlockAt(currentLoc.clone().subtract(0, 2.5, 0)).isPassable())
+            || (world.getBlockAt(currentLoc.clone().subtract(0, 2.5, 0)).isPassable()
+                    && !world.getBlockAt(currentLoc.clone().subtract(0, 3.5, 0)).isPassable())) {
                 if (timeouts.getOrDefault(player.getUniqueId(), new Timeout()).isTimedOut()) {
+                    if (!player.hasPotionEffect(PotionEffectType.SLOW_FALLING)) {
+                        Vector newVelocity = player.getVelocity();
+                        newVelocity.setY(newVelocity.getY() * .25);
+                        player.setVelocity(newVelocity);
+                    }
                     player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 20, 0, true));
-                    Vector newVelocity = player.getVelocity();
-                    newVelocity.setY(newVelocity.getY() * .25);
-                    player.setVelocity(newVelocity);
                     timeouts.put(player.getUniqueId(), new Timeout(1, Calendar.SECOND));
                 }
             }
         }
     }
 
-    // Prevent all FallDamage
-    @EventHandler
-    public void onFallDamage(EntityDamageEvent event) {
-        if (event.getEntity() instanceof Player) {
-            Player player = (Player) event.getEntity();
-            if (ArmorManager.isWearingFullSet(player, ArmorType.AIR)
-            && event.getCause().equals(EntityDamageEvent.DamageCause.FALL)) {
-                event.setCancelled(true);
-            }
-        }
-    }
 }
