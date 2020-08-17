@@ -13,6 +13,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Objects;
 
 public class ArmorManager {
 
@@ -23,7 +24,7 @@ public class ArmorManager {
         boolean output = true;
         try {
             for (ItemStack item : player.getInventory().getArmorContents()) {
-                ArmorType itemType = item.getItemMeta().getPersistentDataContainer().getOrDefault(TYPE, new PersistentArmorType(), ArmorType.NONE);
+                ArmorType itemType = Objects.requireNonNull(item.getItemMeta()).getPersistentDataContainer().getOrDefault(TYPE, new PersistentArmorType(), ArmorType.NONE);
                 if (itemType.equals(type)) continue;
                 output = false;
             }
@@ -37,7 +38,7 @@ public class ArmorManager {
         boolean output = false;
         for (ItemStack item : player.getInventory().getArmorContents()) {
             try {
-                Charm itemCharm = item.getItemMeta().getPersistentDataContainer().getOrDefault(CHARM, new PersistentCharmType(), Charm.NONE);
+                Charm itemCharm = Objects.requireNonNull(item.getItemMeta()).getPersistentDataContainer().getOrDefault(CHARM, new PersistentCharmType(), Charm.NONE);
                 if (itemCharm.equals(charm)) {
                     output = true;
                     break;
