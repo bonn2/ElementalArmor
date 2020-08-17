@@ -1,7 +1,6 @@
 package bonn2.elementalarmor.listeners;
 
 import bonn2.elementalarmor.util.ArmorManager;
-import bonn2.elementalarmor.util.emums.ArmorType;
 import bonn2.elementalarmor.util.Timeout;
 import bonn2.elementalarmor.util.emums.Charm;
 import org.bukkit.ChatColor;
@@ -10,7 +9,6 @@ import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.potion.PotionEffect;
