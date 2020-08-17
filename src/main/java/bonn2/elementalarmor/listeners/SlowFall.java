@@ -29,7 +29,7 @@ public class SlowFall implements Listener {
     public void onSneak(PlayerToggleSneakEvent event) {
         Player player = event.getPlayer();
         if (event.isSneaking()) {
-            if (ArmorManager.isWearingCharm(player, Charm.SLOWFALL)) {
+            if (ArmorManager.isWearingCharm(player, Charm.SLOWFALL) && !player.isGliding()) {
                 if (!player.getWorld().getBlockAt(player.getLocation().subtract(0, 1, 0)).isPassable()) return;
                 if (timeouts.getOrDefault(player.getUniqueId(), new Timeout()).isTimedOut()) {
                     player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 100, 0, true));

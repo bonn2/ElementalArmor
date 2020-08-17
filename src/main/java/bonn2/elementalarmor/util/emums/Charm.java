@@ -9,6 +9,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public enum Charm {
+    ELYTRA_BOOST(ArmorType.AIR, ChatColor.GOLD + "Elytra Boost", Material.GUNPOWDER),
     SLOWFALL(ArmorType.AIR, ChatColor.AQUA + "Slow Falling", Material.FEATHER),
     JUMPING(ArmorType.AIR, ChatColor.AQUA + "Jumping", Material.FEATHER),
     NONE(ArmorType.NONE, "", Material.AIR);

@@ -2,6 +2,7 @@ package bonn2.elementalarmor;
 
 import bonn2.elementalarmor.commands.*;
 import bonn2.elementalarmor.listeners.DoubleJump;
+import bonn2.elementalarmor.listeners.ElytraBoost;
 import bonn2.elementalarmor.listeners.Fireproof;
 import bonn2.elementalarmor.listeners.SlowFall;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -27,6 +28,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SlowFall(), this);
         getServer().getPluginManager().registerEvents(new DoubleJump(), this);
         getServer().getPluginManager().registerEvents(new Fireproof(), this);
+        getServer().getPluginManager().registerEvents(new ElytraBoost(), this);
     }
 
     @Override
