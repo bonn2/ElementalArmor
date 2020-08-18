@@ -22,11 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Reorganization">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/crafting/AddCharm.java" afterDir="false" />
+    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Add Survival Crafting Method">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/air/PushNearby.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/ArmorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/ArmorManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/emums/Charm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/emums/Charm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +76,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ReinforcedTurtleHelmets" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -142,7 +143,9 @@
       <workItem from="1597594075416" duration="103000" />
       <workItem from="1597594205905" duration="2668000" />
       <workItem from="1597607647732" duration="8000" />
-      <workItem from="1597607772199" duration="16069000" />
+      <workItem from="1597607772199" duration="18146000" />
+      <workItem from="1597753241482" duration="5691000" />
+      <workItem from="1597766132525" duration="824000" />
     </task>
     <task id="LOCAL-00001" summary="Fix NPE and IllegalCopy errors">
       <created>1597689706204</created>
@@ -235,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597709737188</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add Survival Crafting Method">
+      <created>1597712028011</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1597712028011</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +261,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix NPE and IllegalCopy errors" />
@@ -263,7 +274,8 @@
     <MESSAGE value="Add no-Fall-Damage set bonus to air set" />
     <MESSAGE value="Add /givecharm tab-complete" />
     <MESSAGE value="Reorganization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reorganization" />
+    <MESSAGE value="Add Survival Crafting Method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Survival Crafting Method" />
   </component>
   <component name="WindowStateProjectService">
     <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1597707756333">
@@ -290,10 +302,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="361" y="226" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1596842896247" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1596580578214">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1597758232400">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1596580578214" />
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1597758232400" />
     <state x="421" y="155" width="356" height="272" key="Github.ShareDialog" timestamp="1597598280923">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -302,22 +314,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="348" y="39" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1597598307198" />
-    <state width="1281" height="89" key="GridCell.Tab.0.bottom" timestamp="1597710344594">
+    <state width="1281" height="89" key="GridCell.Tab.0.bottom" timestamp="1597763742648">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="89" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1597710344594" />
-    <state width="1281" height="89" key="GridCell.Tab.0.center" timestamp="1597710344594">
+    <state width="1281" height="89" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1597763742648" />
+    <state width="1281" height="89" key="GridCell.Tab.0.center" timestamp="1597763742648">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="89" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1597710344594" />
-    <state width="1281" height="89" key="GridCell.Tab.0.left" timestamp="1597710344594">
+    <state width="1281" height="89" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1597763742648" />
+    <state width="1281" height="89" key="GridCell.Tab.0.left" timestamp="1597763742648">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="89" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1597710344594" />
-    <state width="1281" height="89" key="GridCell.Tab.0.right" timestamp="1597710344594">
+    <state width="1281" height="89" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1597763742648" />
+    <state width="1281" height="89" key="GridCell.Tab.0.right" timestamp="1597763742648">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="89" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1597710344594" />
+    <state width="1281" height="89" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1597763742648" />
     <state width="1281" height="213" key="GridCell.Tab.1.bottom" timestamp="1596587048487">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

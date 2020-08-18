@@ -1,10 +1,7 @@
 package bonn2.elementalarmor;
 
 import bonn2.elementalarmor.commands.*;
-import bonn2.elementalarmor.listeners.air.DoubleJump;
-import bonn2.elementalarmor.listeners.air.ElytraBoost;
-import bonn2.elementalarmor.listeners.air.FallDamage;
-import bonn2.elementalarmor.listeners.air.SlowFall;
+import bonn2.elementalarmor.listeners.air.*;
 import bonn2.elementalarmor.listeners.crafting.AddCharm;
 import bonn2.elementalarmor.listeners.fire.Fireproof;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -34,6 +31,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ElytraBoost(), this);
         getServer().getPluginManager().registerEvents(new FallDamage(), this);
         getServer().getPluginManager().registerEvents(new AddCharm(), this);
+        getServer().getPluginManager().registerEvents(new PushNearby(), this);
     }
 
     @Override
