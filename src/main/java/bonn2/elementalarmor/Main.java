@@ -1,7 +1,11 @@
 package bonn2.elementalarmor;
 
 import bonn2.elementalarmor.commands.*;
-import bonn2.elementalarmor.listeners.*;
+import bonn2.elementalarmor.listeners.air.DoubleJump;
+import bonn2.elementalarmor.listeners.air.ElytraBoost;
+import bonn2.elementalarmor.listeners.air.FallDamage;
+import bonn2.elementalarmor.listeners.air.SlowFall;
+import bonn2.elementalarmor.listeners.fire.Fireproof;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -22,6 +26,7 @@ public final class Main extends JavaPlugin {
         Objects.requireNonNull(getCommand("setcharm")).setExecutor(new SetCharm());
         Objects.requireNonNull(getCommand("setcharm")).setTabCompleter(new SetCharmTabComplete());
         Objects.requireNonNull(getCommand("givecharm")).setExecutor(new GiveCharm());
+        Objects.requireNonNull(getCommand("givecharm")).setTabCompleter(new GiveCharmTabComplete());
         getServer().getPluginManager().registerEvents(new SlowFall(), this);
         getServer().getPluginManager().registerEvents(new DoubleJump(), this);
         getServer().getPluginManager().registerEvents(new Fireproof(), this);
