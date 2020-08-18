@@ -56,6 +56,22 @@ public class ArmorManager {
         }
     }
 
+    public static Charm getCharm(ItemStack item) {
+        try {
+            return item.getItemMeta().getPersistentDataContainer().getOrDefault(CHARM, new PersistentCharmType(), Charm.NONE);
+        } catch (NullPointerException e) {
+            return Charm.NONE;
+        }
+    }
+
+    public static ArmorType getType(ItemStack item) {
+        try {
+            return item.getItemMeta().getPersistentDataContainer().getOrDefault(TYPE, new PersistentArmorType(), ArmorType.NONE);
+        } catch (NullPointerException e) {
+            return ArmorType.NONE;
+        }
+    }
+
     public static Collection<CustomArmor> getFullSet(ArmorType type) {
         Collection<CustomArmor> set = new ArrayList<>();
         set.add(new CustomArmor(type, ArmorPiece.HELMET));

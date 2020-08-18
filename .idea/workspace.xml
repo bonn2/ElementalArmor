@@ -22,15 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Add no-Fall-Damage set bonus to air set">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/commands/GiveCharmTabComplete.java" afterDir="false" />
+    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Reorganization">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/crafting/AddCharm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/DoubleJump.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/air/DoubleJump.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/ElytraBoost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/air/ElytraBoost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/FallDamage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/air/FallDamage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/Fireproof.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/fire/Fireproof.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/SlowFall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/air/SlowFall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/ArmorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/ArmorManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +142,7 @@
       <workItem from="1597594075416" duration="103000" />
       <workItem from="1597594205905" duration="2668000" />
       <workItem from="1597607647732" duration="8000" />
-      <workItem from="1597607772199" duration="14142000" />
+      <workItem from="1597607772199" duration="16069000" />
     </task>
     <task id="LOCAL-00001" summary="Fix NPE and IllegalCopy errors">
       <created>1597689706204</created>
@@ -218,7 +214,28 @@
       <option name="project" value="LOCAL" />
       <updated>1597707706421</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add /givecharm tab-complete">
+      <created>1597709706329</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1597709706329</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add /givecharm tab-complete">
+      <created>1597709713637</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1597709713637</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Reorganization">
+      <created>1597709737188</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1597709737188</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +261,9 @@
     <MESSAGE value="Fix issues with double jump and elytra" />
     <MESSAGE value="Add ElytraBoost Charm" />
     <MESSAGE value="Add no-Fall-Damage set bonus to air set" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add no-Fall-Damage set bonus to air set" />
+    <MESSAGE value="Add /givecharm tab-complete" />
+    <MESSAGE value="Reorganization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reorganization" />
   </component>
   <component name="WindowStateProjectService">
     <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1597707756333">
@@ -283,22 +302,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="348" y="39" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1597598307198" />
-    <state width="1281" height="105" key="GridCell.Tab.0.bottom" timestamp="1597707971141">
+    <state width="1281" height="89" key="GridCell.Tab.0.bottom" timestamp="1597710344594">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="105" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1597707971141" />
-    <state width="1281" height="105" key="GridCell.Tab.0.center" timestamp="1597707971141">
+    <state width="1281" height="89" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1597710344594" />
+    <state width="1281" height="89" key="GridCell.Tab.0.center" timestamp="1597710344594">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="105" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1597707971141" />
-    <state width="1281" height="105" key="GridCell.Tab.0.left" timestamp="1597707971141">
+    <state width="1281" height="89" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1597710344594" />
+    <state width="1281" height="89" key="GridCell.Tab.0.left" timestamp="1597710344594">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="105" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1597707971141" />
-    <state width="1281" height="105" key="GridCell.Tab.0.right" timestamp="1597707971141">
+    <state width="1281" height="89" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1597710344594" />
+    <state width="1281" height="89" key="GridCell.Tab.0.right" timestamp="1597710344594">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="105" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1597707971141" />
+    <state width="1281" height="89" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1597710344594" />
     <state width="1281" height="213" key="GridCell.Tab.1.bottom" timestamp="1596587048487">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -319,10 +338,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597690695358" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1597707712251">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1597709740813">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1597707712251" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1597709740813" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597707872348">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
