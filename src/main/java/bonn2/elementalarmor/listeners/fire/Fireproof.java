@@ -1,4 +1,4 @@
-package bonn2.elementalarmor.listeners;
+package bonn2.elementalarmor.listeners.fire;
 
 import bonn2.elementalarmor.util.ArmorManager;
 import bonn2.elementalarmor.util.emums.ArmorType;
