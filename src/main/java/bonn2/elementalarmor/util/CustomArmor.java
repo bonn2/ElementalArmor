@@ -58,7 +58,7 @@ public class CustomArmor extends ItemStack {
             temp.setDisplayName(name + " of " + charm.getFormattedName());
             setItemMeta(temp);
         } else {
-            throw new InvalidCharmException(ChatColor.RED + charm.getType().name() + " charm cannot be put on " + type.name() + " armor!");
+            throw new InvalidCharmException(charm.getType(), type);
         }
     }
 

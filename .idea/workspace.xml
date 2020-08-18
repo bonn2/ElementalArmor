@@ -22,11 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Add Survival Crafting Method">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/air/PushNearby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/emums/Charm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/emums/Charm.java" afterDir="false" />
+    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Add Gust charm">
+      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/CustomArmor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/CustomArmor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/exceptions/InvalidCharmException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/exceptions/InvalidCharmException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +143,7 @@
       <workItem from="1597607647732" duration="8000" />
       <workItem from="1597607772199" duration="18146000" />
       <workItem from="1597753241482" duration="5691000" />
-      <workItem from="1597766132525" duration="824000" />
+      <workItem from="1597766132525" duration="1154000" />
     </task>
     <task id="LOCAL-00001" summary="Fix NPE and IllegalCopy errors">
       <created>1597689706204</created>
@@ -245,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597712028011</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add Gust charm">
+      <created>1597767332070</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1597767332070</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +280,8 @@
     <MESSAGE value="Add /givecharm tab-complete" />
     <MESSAGE value="Reorganization" />
     <MESSAGE value="Add Survival Crafting Method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Survival Crafting Method" />
+    <MESSAGE value="Add Gust charm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Gust charm" />
   </component>
   <component name="WindowStateProjectService">
     <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1597707756333">
@@ -350,14 +356,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597690695358" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1597709740813">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1597767336562">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1597709740813" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1597767336562" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597707872348">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1597707872348" />
+    <state x="0" y="0" width="587" height="680" key="find.popup" timestamp="1597767277262">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="0" y="0" width="587" height="680" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1597767277262" />
     <state x="91" y="2" key="new project wizard" timestamp="1597607046503">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
