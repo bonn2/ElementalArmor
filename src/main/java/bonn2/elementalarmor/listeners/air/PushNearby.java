@@ -26,16 +26,13 @@ public class PushNearby implements Listener {
         Player player = event.getPlayer();
         Vector velocity = player.getVelocity();
         if (player.isSneaking() && velocity.getX() == 0 && velocity.getZ() == 0 && velocity.getY() < -0.1) {
-            System.out.println(-1);
             if (player.getWorld().getBlockAt(event.getFrom()).isPassable()
             && !player.getWorld().getBlockAt(event.getTo().clone().subtract(0, 1, 0)).isPassable()) {
                 System.out.println(velocity.getY());
                 if (ArmorManager.isWearingCharm(player, Charm.PUSH_NEARBY)
                         && timeouts.getOrDefault(player.getUniqueId(), new Timeout()).isTimedOut()) {
-                    System.out.println(2);
                     Location playerLoc = player.getLocation().clone();
                     for (Entity entity : player.getNearbyEntities(4, 2, 4)) {
-                        System.out.println(entity.getName());
                         //TODO: Fix distance to push power relationship
                         Vector direction = entity.getLocation().toVector().clone().subtract(playerLoc.toVector()).normalize();
                         direction.add(new Vector(0, 1, 0));
