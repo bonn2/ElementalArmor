@@ -2,7 +2,6 @@ package bonn2.elementalarmor.listeners.air;
 
 import bonn2.elementalarmor.util.ArmorManager;
 import bonn2.elementalarmor.util.emums.Charm;
-import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

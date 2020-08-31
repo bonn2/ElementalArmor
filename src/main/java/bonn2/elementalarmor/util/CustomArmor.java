@@ -7,7 +7,6 @@ import bonn2.elementalarmor.util.emums.Charm;
 import bonn2.elementalarmor.util.exceptions.InvalidCharmException;
 import bonn2.elementalarmor.util.persistence.PersistentArmorType;
 import bonn2.elementalarmor.util.persistence.PersistentCharmType;
-import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
