@@ -2,7 +2,7 @@ package bonn2.elementalarmor;
 
 import bonn2.elementalarmor.commands.*;
 import bonn2.elementalarmor.listeners.air.*;
-import bonn2.elementalarmor.listeners.crafting.AddCharm;
+import bonn2.elementalarmor.listeners.util.AddCharm;
 import bonn2.elementalarmor.listeners.fire.Fireproof;
 import org.bukkit.plugin.java.JavaPlugin;
 

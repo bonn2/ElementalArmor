@@ -1,4 +1,4 @@
-package bonn2.elementalarmor.listeners.crafting;
+package bonn2.elementalarmor.listeners.util;
 
 import bonn2.elementalarmor.util.ArmorManager;
 import bonn2.elementalarmor.util.CustomArmor;
