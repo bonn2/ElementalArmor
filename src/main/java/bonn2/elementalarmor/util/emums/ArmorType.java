@@ -8,8 +8,8 @@ public enum ArmorType {
             Material.CHAINMAIL_HELMET,
             Material.CHAINMAIL_CHESTPLATE,
             Material.CHAINMAIL_LEGGINGS,
-            Material.CHAINMAIL_BOOTS}
-    ),
+            Material.CHAINMAIL_BOOTS
+    }),
     WATER(ChatColor.AQUA + "Water", new Material[] {
             Material.LEATHER_HELMET,
             Material.LEATHER_CHESTPLATE,
@@ -18,7 +18,7 @@ public enum ArmorType {
     }),
     AIR(ChatColor.AQUA + "Air", new Material[] {
             Material.CHAINMAIL_HELMET,
-            Material.CHAINMAIL_CHESTPLATE,
+            Material.ELYTRA,
             Material.CHAINMAIL_LEGGINGS,
             Material.CHAINMAIL_BOOTS
     }),
