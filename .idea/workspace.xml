@@ -22,9 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Add Gust charm">
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/CustomArmor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/CustomArmor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/exceptions/InvalidCharmException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/exceptions/InvalidCharmException.java" afterDir="false" />
+    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Refactor">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/fire/FireThorns.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/fire/LavaWalking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/util/SoulBinding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/elements/fire/FrozenLava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/emums/Charm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/emums/Charm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,17 +91,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ElementalArmor build" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" value="ElementalArmor build" />
@@ -143,7 +137,14 @@
       <workItem from="1597607647732" duration="8000" />
       <workItem from="1597607772199" duration="18146000" />
       <workItem from="1597753241482" duration="5691000" />
-      <workItem from="1597766132525" duration="1154000" />
+      <workItem from="1597766132525" duration="2233000" />
+      <workItem from="1597798243549" duration="390000" />
+      <workItem from="1598472970940" duration="1213000" />
+      <workItem from="1598536681196" duration="2848000" />
+      <workItem from="1598900431737" duration="3604000" />
+      <workItem from="1598919922778" duration="1988000" />
+      <workItem from="1599017948038" duration="22811000" />
+      <workItem from="1599145707955" duration="2760000" />
     </task>
     <task id="LOCAL-00001" summary="Fix NPE and IllegalCopy errors">
       <created>1597689706204</created>
@@ -250,7 +251,42 @@
       <option name="project" value="LOCAL" />
       <updated>1597767332070</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Modularize InvalidCharmException.java">
+      <created>1597767604814</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1597767604814</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Remove debug code">
+      <created>1598900506082</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1598900506082</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Remove extra imports">
+      <created>1598900725202</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1598900725202</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Formatting Fix">
+      <created>1599018122730</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1599018122730</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Refactor">
+      <created>1599018265532</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1599018265532</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,17 +317,22 @@
     <MESSAGE value="Reorganization" />
     <MESSAGE value="Add Survival Crafting Method" />
     <MESSAGE value="Add Gust charm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Gust charm" />
+    <MESSAGE value="Modularize InvalidCharmException.java" />
+    <MESSAGE value="Remove debug code" />
+    <MESSAGE value="Remove extra imports" />
+    <MESSAGE value="Formatting Fix" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1597707756333">
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1599074602964">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1597707756333" />
-    <state x="321" y="77" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1596493763288">
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1599074602964" />
+    <state x="321" y="77" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598473589397">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="321" y="77" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.680@0.0.1280.680" timestamp="1596493763288" />
+    <state x="321" y="77" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.680@0.0.1280.680" timestamp="1598473589397" />
     <state x="257" y="265" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1597602225689">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -320,22 +361,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="348" y="39" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1597598307198" />
-    <state width="1281" height="89" key="GridCell.Tab.0.bottom" timestamp="1597763742648">
+    <state width="1281" height="131" key="GridCell.Tab.0.bottom" timestamp="1599148469750">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="89" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1597763742648" />
-    <state width="1281" height="89" key="GridCell.Tab.0.center" timestamp="1597763742648">
+    <state width="1281" height="131" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599148469750" />
+    <state width="1281" height="131" key="GridCell.Tab.0.center" timestamp="1599148469750">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="89" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1597763742648" />
-    <state width="1281" height="89" key="GridCell.Tab.0.left" timestamp="1597763742648">
+    <state width="1281" height="131" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599148469750" />
+    <state width="1281" height="131" key="GridCell.Tab.0.left" timestamp="1599148469750">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="89" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1597763742648" />
-    <state width="1281" height="89" key="GridCell.Tab.0.right" timestamp="1597763742648">
+    <state width="1281" height="131" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599148469750" />
+    <state width="1281" height="131" key="GridCell.Tab.0.right" timestamp="1599148469750">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="89" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1597763742648" />
+    <state width="1281" height="131" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599148469750" />
     <state width="1281" height="213" key="GridCell.Tab.1.bottom" timestamp="1596587048487">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -356,10 +397,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597690695358" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1597767336562">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1599018272209">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1597767336562" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1599018272209" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597707872348">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
