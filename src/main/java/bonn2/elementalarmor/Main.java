@@ -2,6 +2,7 @@ package bonn2.elementalarmor;
 
 import bonn2.elementalarmor.commands.*;
 import bonn2.elementalarmor.listeners.air.*;
+import bonn2.elementalarmor.listeners.fire.FireThorns;
 import bonn2.elementalarmor.listeners.fire.Fireproof;
 import bonn2.elementalarmor.listeners.fire.LavaWalking;
 import bonn2.elementalarmor.listeners.util.AddCharm;
@@ -46,6 +47,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new AddCharm(), this);
         getServer().getPluginManager().registerEvents(new PushNearby(), this);
         getServer().getPluginManager().registerEvents(new LavaWalking(), this);
+        getServer().getPluginManager().registerEvents(new FireThorns(), this);
 
         startRepeatingTasks();
     }
