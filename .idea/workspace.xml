@@ -22,7 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Add /bind command. Needs testing" />
+    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Fix Bind.onCommand not returning true when successful">
+      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/persistence/PersistentArmorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/persistence/PersistentArmorType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/persistence/PersistentCharmType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/persistence/PersistentCharmType.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,7 +154,7 @@
       <workItem from="1599251275689" duration="4320000" />
       <workItem from="1599331084053" duration="5130000" />
       <workItem from="1599535049699" duration="18000" />
-      <workItem from="1599535095512" duration="1979000" />
+      <workItem from="1599535095512" duration="2307000" />
     </task>
     <task id="LOCAL-00001" summary="Fix NPE and IllegalCopy errors">
       <created>1597689706204</created>
@@ -314,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599537172142</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Fix Bind.onCommand not returning true when successful">
+      <created>1599537342466</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1599537342466</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +364,8 @@
     <MESSAGE value="Add and implement fire-thorns charm" />
     <MESSAGE value="Add soulbinding, needs testing" />
     <MESSAGE value="Add /bind command. Needs testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add /bind command. Needs testing" />
+    <MESSAGE value="Fix Bind.onCommand not returning true when successful" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Bind.onCommand not returning true when successful" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="0" key="#Plugins" timestamp="1599535146361">
@@ -401,22 +412,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="348" y="39" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1597598307198" />
-    <state width="1281" height="131" key="GridCell.Tab.0.bottom" timestamp="1599537129935">
+    <state width="1281" height="131" key="GridCell.Tab.0.bottom" timestamp="1599537396324">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599537129935" />
-    <state width="1281" height="131" key="GridCell.Tab.0.center" timestamp="1599537129935">
+    <state width="1281" height="131" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599537396324" />
+    <state width="1281" height="131" key="GridCell.Tab.0.center" timestamp="1599537396324">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599537129935" />
-    <state width="1281" height="131" key="GridCell.Tab.0.left" timestamp="1599537129935">
+    <state width="1281" height="131" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599537396324" />
+    <state width="1281" height="131" key="GridCell.Tab.0.left" timestamp="1599537396324">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599537129935" />
-    <state width="1281" height="131" key="GridCell.Tab.0.right" timestamp="1599537129935">
+    <state width="1281" height="131" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599537396324" />
+    <state width="1281" height="131" key="GridCell.Tab.0.right" timestamp="1599537396324">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599537129935" />
+    <state width="1281" height="131" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599537396324" />
     <state width="1281" height="213" key="GridCell.Tab.1.bottom" timestamp="1596587048487">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -441,10 +452,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597690695358" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1599537178705">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1599537347632">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1599537178705" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1599537347632" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597707872348">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
