@@ -22,6 +22,7 @@ public class Bind implements CommandExecutor {
                 CustomArmor armor = new CustomArmor(item);
                 armor.setSoul(target);
                 target.getInventory().setItemInMainHand(armor);
+                return true;
             }
         }
         return false;
