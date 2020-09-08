@@ -35,13 +35,13 @@ public final class Main extends JavaPlugin {
         loadSavedFrozenLava();
 
         Objects.requireNonNull(getCommand("givearmor")).setExecutor(new GiveArmor());
-        Objects.requireNonNull(getCommand("givearmor")).setTabCompleter(new GiveArmorTabComplete());
+        Objects.requireNonNull(getCommand("givearmor")).setTabCompleter(new GiveArmor());
         Objects.requireNonNull(getCommand("setcharm")).setExecutor(new SetCharm());
-        Objects.requireNonNull(getCommand("setcharm")).setTabCompleter(new SetCharmTabComplete());
+        Objects.requireNonNull(getCommand("setcharm")).setTabCompleter(new SetCharm());
         Objects.requireNonNull(getCommand("givecharm")).setExecutor(new GiveCharm());
-        Objects.requireNonNull(getCommand("givecharm")).setTabCompleter(new GiveCharmTabComplete());
+        Objects.requireNonNull(getCommand("givecharm")).setTabCompleter(new GiveCharm());
         Objects.requireNonNull(getCommand("bind")).setExecutor(new Bind());
-        Objects.requireNonNull(getCommand("bind")).setTabCompleter(new BindTabComplete());
+        Objects.requireNonNull(getCommand("bind")).setTabCompleter(new Bind());
         getServer().getPluginManager().registerEvents(new SlowFall(), this);
         getServer().getPluginManager().registerEvents(new DoubleJump(), this);
         getServer().getPluginManager().registerEvents(new Fireproof(), this);
