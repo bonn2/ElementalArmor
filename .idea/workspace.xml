@@ -22,10 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Fix SoulBinding logic error">
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/commands/Bind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/commands/Bind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/commands/BindTabComplete.java" beforeDir="false" />
+    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Merge CommandExecutor and TabCompleter files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/emums/ArmorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/emums/ArmorType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,17 +86,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ElementalArmor build" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" value="ElementalArmor build" />
@@ -155,7 +143,9 @@
       <workItem from="1599251275689" duration="4320000" />
       <workItem from="1599331084053" duration="5130000" />
       <workItem from="1599535049699" duration="18000" />
-      <workItem from="1599535095512" duration="3716000" />
+      <workItem from="1599535095512" duration="4107000" />
+      <workItem from="1599583092058" duration="1209000" />
+      <workItem from="1599595319329" duration="710000" />
     </task>
     <task id="LOCAL-00001" summary="Fix NPE and IllegalCopy errors">
       <created>1597689706204</created>
@@ -346,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599538658617</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Merge CommandExecutor and TabCompleter files">
+      <created>1599539213064</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1599539213064</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,7 +362,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix NPE and IllegalCopy errors" />
     <MESSAGE value="Fix Charm Names" />
     <MESSAGE value="No longer require player to do /fly for double jump to work" />
     <MESSAGE value="Make Slowfall a charm rather than full-set bonus" />
@@ -390,7 +386,8 @@
     <MESSAGE value="Add javadocs to PersistentArmorType.java and PersistentCharmType.java" />
     <MESSAGE value="Fix SoulBinding" />
     <MESSAGE value="Fix SoulBinding logic error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix SoulBinding logic error" />
+    <MESSAGE value="Merge CommandExecutor and TabCompleter files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge CommandExecutor and TabCompleter files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="0" key="#Plugins" timestamp="1599535146361">
@@ -437,22 +434,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="348" y="39" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1597598307198" />
-    <state width="1281" height="131" key="GridCell.Tab.0.bottom" timestamp="1599538950405">
+    <state width="1281" height="131" key="GridCell.Tab.0.bottom" timestamp="1599587209938">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599538950405" />
-    <state width="1281" height="131" key="GridCell.Tab.0.center" timestamp="1599538950404">
+    <state width="1281" height="131" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599587209938" />
+    <state width="1281" height="131" key="GridCell.Tab.0.center" timestamp="1599587209938">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599538950404" />
-    <state width="1281" height="131" key="GridCell.Tab.0.left" timestamp="1599538950404">
+    <state width="1281" height="131" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599587209938" />
+    <state width="1281" height="131" key="GridCell.Tab.0.left" timestamp="1599587209937">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599538950404" />
-    <state width="1281" height="131" key="GridCell.Tab.0.right" timestamp="1599538950404">
+    <state width="1281" height="131" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599587209937" />
+    <state width="1281" height="131" key="GridCell.Tab.0.right" timestamp="1599587209938">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599538950404" />
+    <state width="1281" height="131" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599587209938" />
     <state width="1281" height="213" key="GridCell.Tab.1.bottom" timestamp="1596587048487">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -477,10 +474,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597690695358" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1599538662310">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1599539217044">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1599538662310" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1599539217044" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597707872348">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

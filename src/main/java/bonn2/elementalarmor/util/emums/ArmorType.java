@@ -10,11 +10,11 @@ public enum ArmorType {
             Material.CHAINMAIL_LEGGINGS,
             Material.CHAINMAIL_BOOTS
     }),
-    WATER(ChatColor.AQUA + "Water", new Material[] {
-            Material.LEATHER_HELMET,
-            Material.LEATHER_CHESTPLATE,
-            Material.LEATHER_LEGGINGS,
-            Material.LEATHER_BOOTS
+    WATER(ChatColor.BLUE + "Water", new Material[] {
+            Material.TURTLE_HELMET,
+            Material.DIAMOND_CHESTPLATE,
+            Material.DIAMOND_LEGGINGS,
+            Material.DIAMOND_BOOTS
     }),
     AIR(ChatColor.AQUA + "Air", new Material[] {
             Material.CHAINMAIL_HELMET,
