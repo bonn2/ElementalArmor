@@ -22,11 +22,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Add and implement lava walking charm">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/fire/FireThorns.java" afterDir="false" />
+    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Add and implement fire-thorns charm">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/commands/Bind.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/commands/BindTabComplete.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/listeners/util/SoulBinding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/persistence/PersistentUUIDType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/emums/Charm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/emums/Charm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/CustomArmor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/CustomArmor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +92,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ElementalArmor build" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" value="ElementalArmor build" />
@@ -141,7 +156,11 @@
       <workItem from="1598900431737" duration="3604000" />
       <workItem from="1598919922778" duration="1988000" />
       <workItem from="1599017948038" duration="22811000" />
-      <workItem from="1599145707955" duration="5861000" />
+      <workItem from="1599145707955" duration="6215000" />
+      <workItem from="1599251275689" duration="4320000" />
+      <workItem from="1599331084053" duration="5130000" />
+      <workItem from="1599535049699" duration="18000" />
+      <workItem from="1599535095512" duration="1614000" />
     </task>
     <task id="LOCAL-00001" summary="Fix NPE and IllegalCopy errors">
       <created>1597689706204</created>
@@ -290,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599148736814</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add and implement fire-thorns charm">
+      <created>1599185470455</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1599185470455</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,13 +353,18 @@
     <MESSAGE value="Formatting Fix" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="Add and implement lava walking charm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add and implement lava walking charm" />
+    <MESSAGE value="Add and implement fire-thorns charm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add and implement fire-thorns charm" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1599074602964">
+    <state x="233" y="0" key="#Plugins" timestamp="1599535146361">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1599074602964" />
+    <state x="233" y="0" key="#Plugins/0.0.1280.680@0.0.1280.680" timestamp="1599535146361" />
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1599536441639">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1599536441639" />
     <state x="321" y="77" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598473589397">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -370,22 +401,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="348" y="39" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1597598307198" />
-    <state width="1281" height="131" key="GridCell.Tab.0.bottom" timestamp="1599185135412">
+    <state width="1281" height="131" key="GridCell.Tab.0.bottom" timestamp="1599536805552">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599185135412" />
-    <state width="1281" height="131" key="GridCell.Tab.0.center" timestamp="1599185135411">
+    <state width="1281" height="131" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599536805552" />
+    <state width="1281" height="131" key="GridCell.Tab.0.center" timestamp="1599536805552">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599185135411" />
-    <state width="1281" height="131" key="GridCell.Tab.0.left" timestamp="1599185135411">
+    <state width="1281" height="131" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599536805552" />
+    <state width="1281" height="131" key="GridCell.Tab.0.left" timestamp="1599536805551">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599185135411" />
-    <state width="1281" height="131" key="GridCell.Tab.0.right" timestamp="1599185135411">
+    <state width="1281" height="131" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599536805551" />
+    <state width="1281" height="131" key="GridCell.Tab.0.right" timestamp="1599536805552">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599185135411" />
+    <state width="1281" height="131" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599536805552" />
     <state width="1281" height="213" key="GridCell.Tab.1.bottom" timestamp="1596587048487">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -410,10 +441,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597690695358" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1599018272209">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1599185487592">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1599018272209" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1599185487592" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597707872348">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -430,9 +461,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1597690693667" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1596502491819">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1599331455143">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1596502491819" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1599331455143" />
   </component>
 </project>

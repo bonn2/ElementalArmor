@@ -39,6 +39,8 @@ public final class Main extends JavaPlugin {
         Objects.requireNonNull(getCommand("setcharm")).setTabCompleter(new SetCharmTabComplete());
         Objects.requireNonNull(getCommand("givecharm")).setExecutor(new GiveCharm());
         Objects.requireNonNull(getCommand("givecharm")).setTabCompleter(new GiveCharmTabComplete());
+        Objects.requireNonNull(getCommand("bind")).setExecutor(new Bind());
+        Objects.requireNonNull(getCommand("bind")).setTabCompleter(new BindTabComplete());
         getServer().getPluginManager().registerEvents(new SlowFall(), this);
         getServer().getPluginManager().registerEvents(new DoubleJump(), this);
         getServer().getPluginManager().registerEvents(new Fireproof(), this);
