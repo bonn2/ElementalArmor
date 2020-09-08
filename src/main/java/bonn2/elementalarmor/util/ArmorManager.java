@@ -12,6 +12,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 public class ArmorManager {
@@ -71,8 +72,8 @@ public class ArmorManager {
         }
     }
 
-    public static Collection<CustomArmor> getFullSet(ArmorType type) {
-        Collection<CustomArmor> set = new ArrayList<>();
+    public static List<CustomArmor> getFullSet(ArmorType type) {
+        List<CustomArmor> set = new ArrayList<>();
         set.add(new CustomArmor(type, ArmorPiece.HELMET));
         set.add(new CustomArmor(type, ArmorPiece.CHESTPLATE));
         set.add(new CustomArmor(type, ArmorPiece.LEGGINGS));

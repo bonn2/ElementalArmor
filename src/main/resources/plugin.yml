@@ -9,7 +9,7 @@ depend:
 commands:
   givearmor:
     description: Gives a player a custom armor set
-    usage: /givearmor <player> <type> //TODO [piece] [charm]
+    usage: /givearmor <player> <type> [piece] [charm]
     permission: elementalarmor.admin.givearmor
   setcharm:
     description: Set the charm on an item
