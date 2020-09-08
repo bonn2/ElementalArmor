@@ -10,7 +10,7 @@ public class SoulBinding implements Listener {
     public void onEquipArmor(ArmorEquipEvent event) {
         if (event.getNewArmorPiece() != null) {
             CustomArmor armor = new CustomArmor(event.getNewArmorPiece());
-            if (armor.getSoul() != null && event.getPlayer().getUniqueId() != armor.getSoul()) {
+            if (armor.getSoul() != null && !event.getPlayer().getUniqueId().equals(armor.getSoul())) {
                 event.setCancelled(true);
             }
         }

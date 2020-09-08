@@ -6,6 +6,7 @@ import bonn2.elementalarmor.listeners.fire.FireThorns;
 import bonn2.elementalarmor.listeners.fire.Fireproof;
 import bonn2.elementalarmor.listeners.fire.LavaWalking;
 import bonn2.elementalarmor.listeners.util.AddCharm;
+import bonn2.elementalarmor.listeners.util.SoulBinding;
 import bonn2.elementalarmor.util.elements.fire.FrozenLava;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -50,6 +51,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PushNearby(), this);
         getServer().getPluginManager().registerEvents(new LavaWalking(), this);
         getServer().getPluginManager().registerEvents(new FireThorns(), this);
+        getServer().getPluginManager().registerEvents(new SoulBinding(), this);
 
         startRepeatingTasks();
     }
