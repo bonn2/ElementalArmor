@@ -22,11 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Change Water Set armor materials">
+    <list default="true" id="af821dd3-da42-4e3e-9e0e-27bffbc2c510" name="Default Changelist" comment="Allow /givearmor to give individual pieces with charms">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/commands/GiveArmor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/commands/GiveArmor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/ArmorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bonn2/elementalarmor/util/ArmorManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +145,12 @@
       <workItem from="1599535049699" duration="18000" />
       <workItem from="1599535095512" duration="4107000" />
       <workItem from="1599583092058" duration="1209000" />
-      <workItem from="1599595319329" duration="4128000" />
+      <workItem from="1599595319329" duration="5678000" />
+      <workItem from="1599673891841" duration="3241000" />
+      <workItem from="1599688527878" duration="605000" />
+      <workItem from="1599967293843" duration="655000" />
+      <workItem from="1600047570650" duration="476000" />
+      <workItem from="1600207832827" duration="993000" />
     </task>
     <task id="LOCAL-00001" summary="Fix NPE and IllegalCopy errors">
       <created>1597689706204</created>
@@ -352,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599596584030</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Allow /givearmor to give individual pieces with charms">
+      <created>1599602541048</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1599602541048</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +381,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="No longer require player to do /fly for double jump to work" />
     <MESSAGE value="Make Slowfall a charm rather than full-set bonus" />
     <MESSAGE value="Clean imports" />
     <MESSAGE value="Fix issues with double jump and elytra" />
@@ -396,7 +405,8 @@
     <MESSAGE value="Fix SoulBinding logic error" />
     <MESSAGE value="Merge CommandExecutor and TabCompleter files" />
     <MESSAGE value="Change Water Set armor materials" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Water Set armor materials" />
+    <MESSAGE value="Allow /givearmor to give individual pieces with charms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Allow /givearmor to give individual pieces with charms" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="0" key="#Plugins" timestamp="1599535146361">
@@ -407,10 +417,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1599538919810" />
-    <state x="321" y="77" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598473589397">
+    <state x="321" y="77" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1600209044337">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="321" y="77" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.680@0.0.1280.680" timestamp="1598473589397" />
+    <state x="321" y="77" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.680@0.0.1280.680" timestamp="1600209044337" />
     <state x="257" y="265" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1597602225689">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -443,22 +453,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="348" y="39" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1597598307198" />
-    <state width="1281" height="131" key="GridCell.Tab.0.bottom" timestamp="1599602394244">
+    <state width="1281" height="131" key="GridCell.Tab.0.bottom" timestamp="1599618946770">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599602394244" />
-    <state width="1281" height="131" key="GridCell.Tab.0.center" timestamp="1599602394243">
+    <state width="1281" height="131" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599618946770" />
+    <state width="1281" height="131" key="GridCell.Tab.0.center" timestamp="1599618946770">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599602394243" />
-    <state width="1281" height="131" key="GridCell.Tab.0.left" timestamp="1599602394243">
+    <state width="1281" height="131" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599618946770" />
+    <state width="1281" height="131" key="GridCell.Tab.0.left" timestamp="1599618946769">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599602394243" />
-    <state width="1281" height="131" key="GridCell.Tab.0.right" timestamp="1599602394243">
+    <state width="1281" height="131" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599618946769" />
+    <state width="1281" height="131" key="GridCell.Tab.0.right" timestamp="1599618946770">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="131" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599602394243" />
+    <state width="1281" height="131" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599618946770" />
     <state width="1281" height="213" key="GridCell.Tab.1.bottom" timestamp="1596587048487">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -483,10 +493,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597690695358" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1599596589199">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1599602550134">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1599596589199" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1599602550134" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597707872348">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -495,10 +505,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="0" y="0" width="587" height="680" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1597767277262" />
-    <state x="91" y="2" key="new project wizard" timestamp="1597607046503">
+    <state x="100" y="3" key="new project wizard" timestamp="1599677724617">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="91" y="2" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1597607046503" />
+    <state x="100" y="3" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1599677724617" />
     <state x="297" y="151" key="run.anything.popup" timestamp="1597690693667">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
