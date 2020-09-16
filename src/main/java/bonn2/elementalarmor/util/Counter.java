@@ -6,7 +6,8 @@ import org.bukkit.entity.Player;
 
 public class Counter {
 
-    int max, current;
+    int max, current, displaySize;
+    String name;
 
     /**
      * Creates a new counter with starting value 0
@@ -15,6 +16,8 @@ public class Counter {
     public Counter(int max) {
         this.max = max;
         this.current = 0;
+        name = "";
+        displaySize = max / 4;
     }
 
     /**
@@ -26,6 +29,51 @@ public class Counter {
         this.max = max;
         this.current = starting;
         if (current < 0) current = 0;
+        this.name = "";
+        this.displaySize = max / 4;
+    }
+
+    /**
+     * Creates a new counter with a name and preset value
+     * @param max The maximum value the counter can hold
+     * @param starting The starting value of the counter
+     * @param name The display name of the counter
+     */
+    public Counter(int max, int starting, String name) {
+        this.max = max;
+        this.current = starting;
+        if (current < 0) current = 0;
+        this.name = name;
+        this.displaySize = max / 4;
+    }
+
+    /**
+     * Creates a new counter with a preset display size
+     * @param max The maximum value the counter can hold
+     * @param starting The starting value of the counter
+     * @param displaySize The number of '|' the counter displays
+     */
+    public Counter(int max, int starting, int displaySize) {
+        this.max = max;
+        this.current = starting;
+        if (current < 0) current = 0;
+        this.name = "";
+        this.displaySize = displaySize;
+    }
+
+    /**
+     * Creates a new counter with a starting value name and display size
+     * @param max The maximum value the counter can hold
+     * @param starting The starting value of the counter
+     * @param name The display name of the counter
+     * @param displaySize The number of '|' the counter displays
+     */
+    public Counter(int max, int starting, String name, int displaySize) {
+        this.max = max;
+        this.current = starting;
+        if (current < 0) current = 0;
+        this.name = name;
+        this.displaySize = displaySize;
     }
 
     /**
@@ -73,9 +121,10 @@ public class Counter {
     public void draw(Player player) {
         double percentFull = ((double) current) / ((double) max);
         StringBuilder message = new StringBuilder();
+        if (!name.equals("")) message.append(name).append("&7 A\u00BB ");
         message.append("&8[ ");
-        for (int i = 0; i < 10; i++) {
-            if (i < (int) (percentFull * 10)) message.append("&a");
+        for (int i = 0; i < displaySize; i++) {
+            if (((double) i / (double) displaySize * 100) < (int) (percentFull * 100)) message.append("&a");
             else message.append("&c");
             message.append('|');
         }
