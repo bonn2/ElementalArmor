@@ -57,7 +57,7 @@ public class Explosion implements Listener {
             // 5 second cooldown
             long timeRemaining = execTime - timeouts.getOrDefault(id, -1L);
             if (timeRemaining <= 5000) {
-                player.sendMessage(ChatUtil.colorize("&cYou can explode again in &e{time} &cseconds!".replace("{time}", String.valueOf(timeRemaining / 1000))));
+                player.sendMessage(ChatUtil.colorize("&cYou can explode again in &e{time} &cseconds!".replace("{time}", String.valueOf(5 - (timeRemaining / 1000)))));
                 quickCrouch.remove(id);
                 return;
             } else {
