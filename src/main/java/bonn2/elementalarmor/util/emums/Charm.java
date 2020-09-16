@@ -18,10 +18,11 @@ public enum Charm {
     PUSH_NEARBY(ArmorType.AIR, ChatColor.AQUA + "Gust", Material.FEATHER),
     ELYTRA_BOOST(ArmorType.AIR, ChatColor.GOLD + "Elytra Boost", Material.GUNPOWDER),
     SLOWFALL(ArmorType.AIR, ChatColor.AQUA + "Slow Falling", Material.FEATHER),
-    JUMPING(ArmorType.AIR, ChatColor.AQUA + "Jumping", Material.FEATHER),
 
     // Earth charms
     TELEKINESIS(ArmorType.EARTH, ChatColor.GREEN + "Telekinesis", Material.GHAST_TEAR),
+
+    // No Armor
     NONE(ArmorType.NONE, "", Material.AIR);
 
     private final ArmorType type;

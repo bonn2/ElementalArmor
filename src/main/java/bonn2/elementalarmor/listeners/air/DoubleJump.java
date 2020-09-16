@@ -1,22 +1,26 @@
 package bonn2.elementalarmor.listeners.air;
 
 import bonn2.elementalarmor.util.ArmorManager;
-import bonn2.elementalarmor.util.emums.Charm;
+import bonn2.elementalarmor.util.emums.ArmorType;
 import com.codingforcookies.armorequip.ArmorEquipEvent;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerGameModeChangeEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
+
+import static bonn2.elementalarmor.Main.plugin;
 
 public class DoubleJump implements Listener {
 
     @EventHandler
     public void onDoubleJump(PlayerToggleFlightEvent event) {
         Player player = event.getPlayer();
-        if ((player.getGameMode() != GameMode.CREATIVE || player.getGameMode() != GameMode.SPECTATOR)
-        && ArmorManager.isWearingCharm(player, Charm.JUMPING)) {
+        if ((!player.getGameMode().equals(GameMode.CREATIVE) && !player.getGameMode().equals(GameMode.SPECTATOR))
+        && ArmorManager.isWearingFullSet(player, ArmorType.AIR)) {
             event.setCancelled(true);
             if (player.isGliding()) {
                 player.setGliding(true);
@@ -32,15 +36,33 @@ public class DoubleJump implements Listener {
 
     @EventHandler
     public void onArmorEquip(ArmorEquipEvent event) {
-        boolean oldHasJumping = ArmorManager.hasCharm(event.getOldArmorPiece(), Charm.JUMPING);
-        boolean newHasJumping = ArmorManager.hasCharm(event.getNewArmorPiece(), Charm.JUMPING);
+        boolean oldIsAir = ArmorManager.getType(event.getOldArmorPiece()).equals(ArmorType.AIR);
         Player player = event.getPlayer();
-        if (oldHasJumping && newHasJumping) {
-            player.setAllowFlight(true);
-        } else if (oldHasJumping && !newHasJumping) {
-            player.setAllowFlight(false);
-        } else if (!oldHasJumping && newHasJumping) {
-            player.setAllowFlight(true);
+        new BukkitRunnable() {
+
+            @Override
+            public void run() {
+                if (ArmorManager.isWearingFullSet(player, ArmorType.AIR)) {
+                    player.setAllowFlight(true);
+                } else if (oldIsAir && (!player.getGameMode().equals(GameMode.CREATIVE) && !player.getGameMode().equals(GameMode.SPECTATOR))) {
+                    player.setAllowFlight(false);
+                }
+            }
+
+        }.runTaskLater(plugin, 1);
+    }
+
+    @EventHandler
+    public void gamemodeChangeEvent(PlayerGameModeChangeEvent event) {
+        Player player = event.getPlayer();
+        if (ArmorManager.isWearingFullSet(player, ArmorType.AIR)
+        && (event.getNewGameMode().equals(GameMode.SURVIVAL) || event.getNewGameMode().equals(GameMode.ADVENTURE))) {
+            new BukkitRunnable() {
+                @Override
+                public void run() {
+                    player.setAllowFlight(true);
+                }
+            }.runTaskLater(plugin, 1);
         }
     }
 }

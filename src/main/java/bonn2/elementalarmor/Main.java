@@ -55,7 +55,6 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SlowFall(), this);
         getServer().getPluginManager().registerEvents(new DoubleJump(), this);
         getServer().getPluginManager().registerEvents(new ElytraBoost(), this);
-        getServer().getPluginManager().registerEvents(new FallDamage(), this);
         getServer().getPluginManager().registerEvents(new PushNearby(), this);
         // fire
         getServer().getPluginManager().registerEvents(new Fireproof(), this);
