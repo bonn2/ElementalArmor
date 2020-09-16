@@ -28,7 +28,6 @@ public class PushNearby implements Listener {
         if (player.isSneaking() && velocity.getX() == 0 && velocity.getZ() == 0 && velocity.getY() < -0.1) {
             if (player.getWorld().getBlockAt(event.getFrom()).isPassable()
             && !player.getWorld().getBlockAt(event.getTo().clone().subtract(0, 1, 0)).isPassable()) {
-                System.out.println(velocity.getY());
                 if (ArmorManager.isWearingCharm(player, Charm.PUSH_NEARBY)
                         && timeouts.getOrDefault(player.getUniqueId(), new Timeout()).isTimedOut()) {
                     Location playerLoc = player.getLocation().clone();

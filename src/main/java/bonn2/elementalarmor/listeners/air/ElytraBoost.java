@@ -27,7 +27,6 @@ public class ElytraBoost implements Listener {
                     else
                         counters.put(player.getUniqueId(), new Counter(60, 60));
                     counters.get(player.getUniqueId()).draw(player);
-                    System.out.println(counters.get(player.getUniqueId()).getCurrent());
                     if (!counters.get(player.getUniqueId()).isEmpty())
                         player.setVelocity(player.getLocation().getDirection().multiply(2));
                 }
@@ -35,7 +34,6 @@ public class ElytraBoost implements Listener {
                 if (counters.containsKey(player.getUniqueId()) && !counters.get(player.getUniqueId()).isFull()) {
                     counters.get(player.getUniqueId()).increment(1);
                     counters.get(player.getUniqueId()).draw(player);
-                    System.out.println(counters.get(player.getUniqueId()).getCurrent());
                 }
             }
         }
