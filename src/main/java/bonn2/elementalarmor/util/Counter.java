@@ -121,7 +121,7 @@ public class Counter {
     public void draw(Player player) {
         double percentFull = ((double) current) / ((double) max);
         StringBuilder message = new StringBuilder();
-        if (!name.equals("")) message.append(name).append("&7 A\u00BB ");
+        if (!name.equals("")) message.append(name).append("&7 \u00BB ");
         message.append("&8[ ");
         for (int i = 0; i < displaySize; i++) {
             if (((double) i / (double) displaySize * 100) < (int) (percentFull * 100)) message.append("&a");
