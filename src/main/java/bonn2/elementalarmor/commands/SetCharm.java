@@ -1,6 +1,8 @@
 package bonn2.elementalarmor.commands;
 
+import bonn2.elementalarmor.util.ArmorManager;
 import bonn2.elementalarmor.util.CustomArmor;
+import bonn2.elementalarmor.util.emums.ArmorType;
 import bonn2.elementalarmor.util.emums.Charm;
 import bonn2.elementalarmor.util.exceptions.InvalidCharmException;
 import org.bukkit.Bukkit;
@@ -59,9 +61,14 @@ public class SetCharm implements CommandExecutor, TabCompleter {
                 break;
             }
             case 2: {
-                for (Charm charm : Charm.values())
-                    if (!charm.equals(Charm.NONE))
-                        output.add(charm.name().toLowerCase());
+                Player player = Bukkit.getPlayer(args[0]);
+                if (player != null) {
+                    ItemStack item = player.getInventory().getItemInMainHand();
+                    ArmorType type = ArmorManager.getType(item);
+                    for (Charm charm : Charm.values())
+                        if (!charm.equals(Charm.NONE) && charm.getType().equals(type))
+                            output.add(charm.name().toLowerCase());
+                }
                 break;
             }
         }
