@@ -65,7 +65,7 @@ public class Explosion implements Listener {
                 timeouts.remove(id);
             }
 
-            Counter counter = new Counter(5, 0, Charm.EXPLOSION.getFormattedName(), 10);
+            Counter counter = new Counter(100, 0, Charm.EXPLOSION.getFormattedName(), 10);
             counter.draw(player);
             Bukkit.getServer().getScheduler().runTaskTimer(plugin, t -> {
                 if (!player.isSneaking()) {
@@ -75,7 +75,7 @@ public class Explosion implements Listener {
                 }
                 counter.increment(1);
                 counter.draw(player);
-            }, 20, 20);
+            }, 0, 1);
         }
     }
 
@@ -88,7 +88,7 @@ public class Explosion implements Listener {
         if (c == null) {
             level = 1F;
         } else {
-            level = c.getCurrent();
+            level = (int) ((double) c.getCurrent() / 20);
         }
 
         // create the explosion :)
