@@ -5,7 +5,6 @@ import bonn2.elementalarmor.util.ArmorManager;
 import bonn2.elementalarmor.util.ChatUtil;
 import bonn2.elementalarmor.util.emums.Charm;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -52,8 +51,9 @@ public class Explosion implements Listener {
                 return;
             }
             // 5 second cooldown
-            if (execTime - timeouts.getOrDefault(id, -1L) <= 5000) {
-                player.sendMessage(ChatUtil.colorize("<#B22222>You can only explode every 5 seconds!"));
+            long timeRemaining = execTime - timeouts.getOrDefault(id, -1L);
+            if (timeRemaining <= 5000) {
+                player.sendMessage(ChatUtil.colorize("&cYou can explode again in &e{time} &cseconds!".replace("{time}", String.valueOf(timeRemaining / 1000))));
                 quickCrouch.remove(id);
                 return;
             } else {
