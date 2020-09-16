@@ -12,6 +12,7 @@ public enum Charm {
     // fire armors
     FIRE_THORNS(ArmorType.FIRE, ChatColor.GOLD + "Fire Thorns", Material.BLAZE_POWDER),
     LAVA_WALKING(ArmorType.FIRE, ChatColor.GOLD + "Lava Walking", Material.MAGMA_CREAM),
+    EXPLOSION(ArmorType.FIRE, ChatColor.GOLD + "Explosion", Material.TNT),
 
     // air armors
     PUSH_NEARBY(ArmorType.AIR, ChatColor.AQUA + "Gust", Material.FEATHER),

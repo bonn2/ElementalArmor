@@ -6,6 +6,7 @@ import bonn2.elementalarmor.commands.GiveCharm;
 import bonn2.elementalarmor.commands.SetCharm;
 import bonn2.elementalarmor.listeners.air.*;
 import bonn2.elementalarmor.listeners.earth.Telekinesis;
+import bonn2.elementalarmor.listeners.fire.Explosion;
 import bonn2.elementalarmor.listeners.fire.FireThorns;
 import bonn2.elementalarmor.listeners.fire.Fireproof;
 import bonn2.elementalarmor.listeners.fire.LavaWalking;
@@ -60,6 +61,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Fireproof(), this);
         getServer().getPluginManager().registerEvents(new LavaWalking(), this);
         getServer().getPluginManager().registerEvents(new FireThorns(), this);
+        getServer().getPluginManager().registerEvents(new Explosion(), this);
         // earth
         getServer().getPluginManager().registerEvents(new Telekinesis(), this);
 
