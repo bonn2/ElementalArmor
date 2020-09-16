@@ -19,7 +19,7 @@ public class Explosion implements Listener {
     Map<UUID, Long> quickCrouch = new HashMap<>();
     Map<UUID, Long> timeouts = new HashMap<>();
 
-    public List<UUID> noDamage = new ArrayList<>();
+    List<UUID> noDamage = new ArrayList<>();
 
     private Main plugin;
 
