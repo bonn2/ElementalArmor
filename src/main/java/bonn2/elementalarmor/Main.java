@@ -34,7 +34,7 @@ public final class Main extends JavaPlugin {
     }
 
     @Override
-    public void onEnable () {
+    public void onEnable() {
         plugin = this;
         saveConfig(false);
         loadSavedFrozenLava();
@@ -61,7 +61,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Fireproof(), this);
         getServer().getPluginManager().registerEvents(new LavaWalking(), this);
         getServer().getPluginManager().registerEvents(new FireThorns(), this);
-        getServer().getPluginManager().registerEvents(new Explosion(), this);
+        getServer().getPluginManager().registerEvents(new Explosion(this), this);
         // earth
         getServer().getPluginManager().registerEvents(new Telekinesis(), this);
 
@@ -69,7 +69,7 @@ public final class Main extends JavaPlugin {
     }
 
     @Override
-    public void onDisable () {
+    public void onDisable() {
         // Save all FrozenLava locations to file
         List<FrozenLava> toSave = new ArrayList<>();
         for (Location key : LavaWalking.frozenLavaMap.keySet()) {
@@ -85,7 +85,7 @@ public final class Main extends JavaPlugin {
         }
     }
 
-    public void saveConfig (boolean replace) {
+    public void saveConfig(boolean replace) {
         File configYML = new File(getDataFolder() + File.separator + "config.yml");
         if (!configYML.exists()) {
             getLogger().warning("No config.yml found, making a new one!");
@@ -93,7 +93,7 @@ public final class Main extends JavaPlugin {
         }
     }
 
-    public YamlConfiguration getOrCreateConfig (String name) {
+    public YamlConfiguration getOrCreateConfig(String name) {
         File file = new File(getDataFolder() + File.separator + name + ".yml");
         try {
             if (!file.exists())
@@ -104,7 +104,7 @@ public final class Main extends JavaPlugin {
         return YamlConfiguration.loadConfiguration(file);
     }
 
-    public void loadSavedFrozenLava () {
+    public void loadSavedFrozenLava() {
         data = getOrCreateConfig("data");
         List<FrozenLava> loaded = (List<FrozenLava>) data.get("frozenLava");
         if (loaded == null) return;
@@ -112,7 +112,7 @@ public final class Main extends JavaPlugin {
             LavaWalking.frozenLavaMap.put(lava.getLocation(), lava);
     }
 
-    private void startRepeatingTasks () {
+    private void startRepeatingTasks() {
         LavaWalking.startRepeatingTask();
     }
 }
