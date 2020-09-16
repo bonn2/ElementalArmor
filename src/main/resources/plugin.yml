@@ -1,6 +1,6 @@
 name: ElementalArmor
 version: @version@
-main: bonn2.elementalarmor.Main
+main: ca.minecore.elementalarmor.Main
 api-version: "1.16"
 authors: [bonn2]
 description: Adds custom armor sets with charms for Enigma Towns on play.minecore.ca
