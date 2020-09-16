@@ -1,6 +1,7 @@
 package bonn2.elementalarmor.util.emums;
 
 import bonn2.elementalarmor.Main;
+import bonn2.elementalarmor.util.ChatUtil;
 import bonn2.elementalarmor.util.persistence.PersistentCharmType;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -41,7 +42,7 @@ public enum Charm {
     }
 
     public String getFormattedName() {
-        return formattedName;
+        return ChatUtil.colorize(formattedName);
     }
 
     public ItemStack getItem() {
