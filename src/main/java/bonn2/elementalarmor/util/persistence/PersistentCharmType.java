@@ -50,6 +50,10 @@ public class PersistentCharmType implements PersistentDataType<String, Charm> {
     @NotNull
     @Override
     public Charm fromPrimitive(@NotNull String primitive, @NotNull PersistentDataAdapterContext context) {
-        return Charm.valueOf(primitive);
+        try {
+            return Charm.valueOf(primitive);
+        } catch (IllegalArgumentException e) {
+            return Charm.NONE;
+        }
     }
 }
