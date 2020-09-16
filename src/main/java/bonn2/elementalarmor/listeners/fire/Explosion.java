@@ -66,6 +66,7 @@ public class Explosion implements Listener {
             event.getPlayer().getWorld().createExplosion(event.getPlayer().getLocation(), 1, false, false);
             quickCrouch.remove(id);
             timeouts.put(id, execTime);
+            // give them two seconds to get rid of the damage, then add it
             Bukkit.getServer().getScheduler().runTaskLater(plugin, () -> noDamage.remove(id), 40);
         }
 
@@ -74,16 +75,18 @@ public class Explosion implements Listener {
     @EventHandler
     public void onDamage(EntityDamageEvent event) {
 
+        // only players :P
         if (!(event.getEntity() instanceof Player)) return;
-
         Player player = (Player) event.getEntity();
 
+        // block explosion damage cancelled
         if (event.getCause() == EntityDamageEvent.DamageCause.BLOCK_EXPLOSION && noDamage.contains(event.getEntity().getUniqueId())) {
             double addHealth = event.getDamage() + player.getHealth();
             if (addHealth > 20.0) addHealth = 20.0;
             player.setHealth(addHealth);
         }
 
+        // fall damage cancelled
         if (event.getCause() == EntityDamageEvent.DamageCause.FALL && noDamage.contains(event.getEntity().getUniqueId())) {
             double addHealth = event.getDamage() + player.getHealth();
             if (addHealth > 20.0) addHealth = 20.0;
