@@ -3,14 +3,15 @@ package bonn2.elementalarmor.listeners.fire;
 import bonn2.elementalarmor.Main;
 import bonn2.elementalarmor.util.ArmorManager;
 import bonn2.elementalarmor.util.ChatUtil;
+import bonn2.elementalarmor.util.Counter;
 import bonn2.elementalarmor.util.emums.Charm;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
+import org.bukkit.scheduler.BukkitTask;
 
 import java.util.*;
 
@@ -19,9 +20,11 @@ public class Explosion implements Listener {
     Map<UUID, Long> quickCrouch = new HashMap<>();
     Map<UUID, Long> timeouts = new HashMap<>();
 
+    Map<UUID, Counter> counters = new HashMap<>();
+
     List<UUID> noDamage = new ArrayList<>();
 
-    private Main plugin;
+    private final Main plugin;
 
     public Explosion(Main plugin) {
         this.plugin = plugin;
@@ -52,8 +55,9 @@ public class Explosion implements Listener {
                 return;
             }
             // 5 second cooldown
-            if (execTime - timeouts.getOrDefault(id, -1L) <= 5000) {
-                player.sendMessage(ChatUtil.colorize("<#B22222>You can only explode every 5 seconds!"));
+            long timeRemaining = execTime - timeouts.getOrDefault(id, -1L);
+            if (timeRemaining <= 5000) {
+                player.sendMessage(ChatUtil.colorize("&cYou can explode again in &e{time} &cseconds!".replace("{time}", String.valueOf(timeRemaining / 1000))));
                 quickCrouch.remove(id);
                 return;
             } else {
@@ -61,14 +65,41 @@ public class Explosion implements Listener {
                 timeouts.remove(id);
             }
 
-            // create the explosion :)
-            noDamage.add(id);
-            event.getPlayer().getWorld().createExplosion(event.getPlayer().getLocation(), 1, false, false);
-            quickCrouch.remove(id);
-            timeouts.put(id, execTime);
-            // give them two seconds to get rid of the damage, then add it
-            Bukkit.getServer().getScheduler().runTaskLater(plugin, () -> noDamage.remove(id), 40);
+            Counter counter = new Counter(5, 0, Charm.EXPLOSION.getFormattedName(), 10);
+            counter.draw(player);
+            Bukkit.getServer().getScheduler().runTaskTimer(plugin, t -> {
+                if (!player.isSneaking()) {
+                    t.cancel();
+                    counters.put(id, counter);
+                    unSneak(event);
+                }
+                counter.increment(1);
+                counter.draw(player);
+            }, 20, 20);
         }
+    }
+
+    private void unSneak(PlayerToggleSneakEvent event) {
+        Long execTime = System.currentTimeMillis();
+        UUID id = event.getPlayer().getUniqueId();
+
+        Counter c = counters.get(id);
+        float level;
+        if (c == null) {
+            level = 1F;
+        } else {
+            level = c.getCurrent();
+        }
+
+        // create the explosion :)
+        noDamage.add(id);
+        event.getPlayer().getWorld().createExplosion(event.getPlayer().getLocation(), level, false, false);
+        event.getPlayer().setVelocity(event.getPlayer().getLocation().getDirection().multiply(level));
+        quickCrouch.remove(id);
+        timeouts.put(id, execTime);
+        // give them two seconds to get rid of the damage, then add it
+        Bukkit.getServer().getScheduler().runTaskLater(plugin, () -> noDamage.remove(id), 100);
+
 
     }
 
@@ -77,20 +108,15 @@ public class Explosion implements Listener {
 
         // only players :P
         if (!(event.getEntity() instanceof Player)) return;
-        Player player = (Player) event.getEntity();
 
         // block explosion damage cancelled
         if (event.getCause() == EntityDamageEvent.DamageCause.BLOCK_EXPLOSION && noDamage.contains(event.getEntity().getUniqueId())) {
-            double addHealth = event.getDamage() + player.getHealth();
-            if (addHealth > 20.0) addHealth = 20.0;
-            player.setHealth(addHealth);
+            event.setDamage(0);
         }
 
         // fall damage cancelled
         if (event.getCause() == EntityDamageEvent.DamageCause.FALL && noDamage.contains(event.getEntity().getUniqueId())) {
-            double addHealth = event.getDamage() + player.getHealth();
-            if (addHealth > 20.0) addHealth = 20.0;
-            player.setHealth(addHealth);
+            event.setDamage(0);
         }
 
     }
