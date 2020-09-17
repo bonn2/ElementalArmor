@@ -87,6 +87,16 @@ public class Counter {
     }
 
     /**
+     * Safely set the counter with bounds-checking
+     * @param num The value to set the counter to
+     */
+    public void set(int num) {
+        current = num;
+        if (current < 0) current = 0;
+        if (current > max) current = max;
+    }
+
+    /**
      * @return If the counter is full
      */
     public boolean isFull() {
