@@ -9,4 +9,4 @@ Run Instructions
 1. Put ElementalArmor-1.0-SNAPHOT.jar and [ArmorEquipEvent-1.7.2.jar](https://www.spigotmc.org/resources/lib-armorequipevent.5478/) in /plugins/ on the server
 2. Boot up server
 
-TIP: It is safe to use [Plugman](https://dev.bukkit.org/projects/plugman) to unload and load ElementalArmor
+TIP: It is safe to use [Plugman](https://dev.bukkit.org/projects/plugman) or [BileTools](https://www.spigotmc.org/resources/biletools-test-plugins-faster.54823/) to unload and load ElementalArmor
