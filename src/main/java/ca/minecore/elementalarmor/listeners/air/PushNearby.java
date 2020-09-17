@@ -24,7 +24,7 @@ public class PushNearby implements Listener {
 
     Map<UUID, Timeout> timeouts = new HashMap<>();
     Map<UUID, Counter> counters = new HashMap<>();
-/*
+
     @EventHandler
     public void holdCrouch(PlayerToggleSneakEvent event) {
         if (event.isSneaking()) {
@@ -33,18 +33,17 @@ public class PushNearby implements Listener {
                 counters.get(event.getPlayer().getUniqueId()).draw(event.getPlayer());
                 Bukkit.getServer().getScheduler().runTaskTimer(Main.plugin, t -> {
                     if (!event.getPlayer().isSneaking()) {
-                        unSneak(event.getPlayer());
+                        counters.get(event.getPlayer().getUniqueId()).set(0);
+                        counters.get(event.getPlayer().getUniqueId()).draw(event.getPlayer());
+                        counters.remove(event.getPlayer().getUniqueId());
                         t.cancel();
+                        return;
                     }
                     counters.get(event.getPlayer().getUniqueId()).increment(1);
                     counters.get(event.getPlayer().getUniqueId()).draw(event.getPlayer());
                 }, 0, 1);
             }
         }
-    }*/
-
-    private void unSneak(Player player) {
-        counters.remove(player.getUniqueId());
     }
 
     @EventHandler
@@ -52,23 +51,22 @@ public class PushNearby implements Listener {
         if (event.getTo() == null) return;
         Player player = event.getPlayer();
         Vector velocity = player.getVelocity();
-        if (player.isSneaking() && velocity.getX() == 0 && velocity.getZ() == 0 && velocity.getY() < -0.1) {
-            if (player.getWorld().getBlockAt(event.getFrom()).isPassable()
-            && !player.getWorld().getBlockAt(event.getTo().clone().subtract(0, 1, 0)).isPassable()) {
-                if (ArmorManager.isWearingCharm(player, Charm.PUSH_NEARBY)
-                        && timeouts.getOrDefault(player.getUniqueId(), new Timeout()).isTimedOut()) {
-                    Location playerLoc = player.getLocation().clone();
-                    for (Entity entity : player.getNearbyEntities(4, 2, 4)) {
-                        //TODO: Fix distance to push power relationship
-                        Vector direction = entity.getLocation().toVector().clone().subtract(playerLoc.toVector()).normalize();
-                        direction.add(new Vector(0, 1, 0));
-                        Vector entityVelocity = new Vector(1, 1, 1);
-                        entityVelocity.subtract(direction);
-                        entity.setVelocity(direction);
-                    }
-                    timeouts.put(player.getUniqueId(), new Timeout(500, Calendar.MILLISECOND));
-                }
+        if (player.isSneaking()
+        && velocity.getY() < -0.1
+        && player.getWorld().getBlockAt(event.getFrom()).isPassable()
+        && !player.getWorld().getBlockAt(event.getTo().clone().subtract(0, 1, 0)).isPassable()
+        && ArmorManager.isWearingCharm(player, Charm.PUSH_NEARBY)
+        && timeouts.getOrDefault(player.getUniqueId(), new Timeout()).isTimedOut()
+        && !counters.getOrDefault(player.getUniqueId(), new Counter(1)).isEmpty()) {
+            Location playerLoc = player.getLocation().clone();
+            for (Entity entity : player.getNearbyEntities(4, 2, 4)) {
+                Vector direction = entity.getLocation().toVector().clone().subtract(playerLoc.toVector()).normalize();
+                direction.setY(.5);
+                direction.multiply(counters.get(player.getUniqueId()).getCurrent() / 20);
+                entity.setVelocity(direction);
             }
+            counters.get(player.getUniqueId()).set(0);
+            timeouts.put(player.getUniqueId(), new Timeout(500, Calendar.MILLISECOND));
         }
     }
 
