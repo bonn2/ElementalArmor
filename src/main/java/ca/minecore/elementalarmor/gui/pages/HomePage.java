@@ -9,7 +9,7 @@ public class HomePage extends AbstractEnigmaGUI {
 
     @Override
     public Gui getGui(Player player) {
-        Gui gui = new Gui(5, ChatUtil.colorize("&6Minecore &7- &bEnigma"));
+        Gui gui = new Gui(5, ChatUtil.colorize("&eMinecore &7- &bEnigma"));
 
         return gui;
     }
