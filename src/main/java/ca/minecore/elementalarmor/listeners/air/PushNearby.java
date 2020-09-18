@@ -33,8 +33,8 @@ public class PushNearby implements Listener {
                 counters.get(event.getPlayer().getUniqueId()).draw(event.getPlayer());
                 Bukkit.getServer().getScheduler().runTaskTimer(Main.plugin, t -> {
                     if (!event.getPlayer().isSneaking()) {
-                        counters.get(event.getPlayer().getUniqueId()).set(0);
-                        counters.get(event.getPlayer().getUniqueId()).draw(event.getPlayer());
+                        counters.getOrDefault(event.getPlayer().getUniqueId(), new Counter(60, 0, Charm.PUSH_NEARBY.getFormattedName(), 10)).set(0);
+                        counters.getOrDefault(event.getPlayer().getUniqueId(), new Counter(60, 0, Charm.PUSH_NEARBY.getFormattedName(), 10)).draw(event.getPlayer());
                         counters.remove(event.getPlayer().getUniqueId());
                         t.cancel();
                         return;
