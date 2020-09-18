@@ -1,5 +1,6 @@
 package ca.minecore.elementalarmor.commands;
 
+import ca.minecore.elementalarmor.Main;
 import ca.minecore.elementalarmor.util.ArmorManager;
 import ca.minecore.elementalarmor.util.CustomArmor;
 import ca.minecore.elementalarmor.util.emums.ArmorPiece;
@@ -8,10 +9,7 @@ import ca.minecore.elementalarmor.util.emums.Charm;
 import ca.minecore.elementalarmor.util.exceptions.InvalidCharmException;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
+import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -20,6 +18,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GiveArmor implements CommandExecutor, TabCompleter {
+
+    private Main plugin;
+
+    public GiveArmor(Main plugin) {
+        this.plugin = plugin;
+        PluginCommand cmd = plugin.getCommand("givearmor");
+        if (cmd != null) {
+            cmd.setTabCompleter(this);
+            cmd.setExecutor(this);
+        } else plugin.getLogger().severe("Give Armor Command was null!");
+    }
+
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         switch (args.length) {

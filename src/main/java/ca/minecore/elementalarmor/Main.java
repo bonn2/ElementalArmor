@@ -26,7 +26,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public final class Main extends JavaPlugin {
 
@@ -43,32 +42,9 @@ public final class Main extends JavaPlugin {
         saveConfig(false);
         loadSavedFrozenLava();
 
-        Objects.requireNonNull(getCommand("givearmor")).setExecutor(new GiveArmor());
-        Objects.requireNonNull(getCommand("givearmor")).setTabCompleter(new GiveArmor());
-        Objects.requireNonNull(getCommand("setcharm")).setExecutor(new SetCharm());
-        Objects.requireNonNull(getCommand("setcharm")).setTabCompleter(new SetCharm());
-        Objects.requireNonNull(getCommand("givecharm")).setExecutor(new GiveCharm());
-        Objects.requireNonNull(getCommand("givecharm")).setTabCompleter(new GiveCharm());
-        Objects.requireNonNull(getCommand("bind")).setExecutor(new Bind());
-        Objects.requireNonNull(getCommand("bind")).setTabCompleter(new Bind());
-
-        getServer().getPluginManager().registerEvents(new AddCharm(), this);
-        getServer().getPluginManager().registerEvents(new SoulBinding(), this);
-
-        // air
-        getServer().getPluginManager().registerEvents(new SlowFall(), this);
-        getServer().getPluginManager().registerEvents(new DoubleJump(), this);
-        getServer().getPluginManager().registerEvents(new ElytraBoost(), this);
-        getServer().getPluginManager().registerEvents(new PushNearby(), this);
-        // fire
-        getServer().getPluginManager().registerEvents(new Fireproof(), this);
-        getServer().getPluginManager().registerEvents(new LavaWalking(), this);
-        getServer().getPluginManager().registerEvents(new FireThorns(), this);
-        getServer().getPluginManager().registerEvents(new Explosion(this), this);
-        // earth
-        getServer().getPluginManager().registerEvents(new Telekinesis(), this);
-        // water
-        getServer().getPluginManager().registerEvents(new FastSwim(), this);
+        // register commands & liseners
+        registerCommands();
+        registerListeners();
 
         startRepeatingTasks();
     }
@@ -119,5 +95,36 @@ public final class Main extends JavaPlugin {
 
     private void startRepeatingTasks() {
         LavaWalking.startRepeatingTask();
+    }
+
+    // register all the plugins commands
+    // each constructor of the following classes registers
+    private void registerCommands() {
+        new GiveArmor(this);
+        new SetCharm(this);
+        new GiveCharm(this);
+        new Bind(this);
+    }
+
+    // regiter the listeners of the plugin
+    private void registerListeners() {
+        getServer().getPluginManager().registerEvents(new AddCharm(), this);
+        getServer().getPluginManager().registerEvents(new SoulBinding(), this);
+
+        // air
+        getServer().getPluginManager().registerEvents(new SlowFall(), this);
+        getServer().getPluginManager().registerEvents(new DoubleJump(), this);
+        getServer().getPluginManager().registerEvents(new ElytraBoost(), this);
+        getServer().getPluginManager().registerEvents(new PushNearby(), this);
+        // fire
+        getServer().getPluginManager().registerEvents(new Fireproof(), this);
+        getServer().getPluginManager().registerEvents(new LavaWalking(), this);
+        getServer().getPluginManager().registerEvents(new FireThorns(), this);
+        getServer().getPluginManager().registerEvents(new Explosion(this), this);
+        // earth
+        getServer().getPluginManager().registerEvents(new Telekinesis(), this);
+        // water
+        getServer().getPluginManager().registerEvents(new FastSwim(), this);
+
     }
 }
