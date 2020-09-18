@@ -1,9 +1,7 @@
 package ca.minecore.elementalarmor;
 
-import ca.minecore.elementalarmor.commands.Bind;
-import ca.minecore.elementalarmor.commands.GiveArmor;
-import ca.minecore.elementalarmor.commands.GiveCharm;
-import ca.minecore.elementalarmor.commands.SetCharm;
+import ca.minecore.elementalarmor.commands.*;
+import ca.minecore.elementalarmor.gui.InventoryManager;
 import ca.minecore.elementalarmor.listeners.air.DoubleJump;
 import ca.minecore.elementalarmor.listeners.air.ElytraBoost;
 import ca.minecore.elementalarmor.listeners.air.PushNearby;
@@ -20,13 +18,13 @@ import ca.minecore.elementalarmor.util.elements.fire.FrozenLava;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public final class Main extends JavaPlugin {
 
@@ -37,38 +35,22 @@ public final class Main extends JavaPlugin {
         ConfigurationSerialization.registerClass(FrozenLava.class, "FrozenLava");
     }
 
+    private InventoryManager inventoryManager;
+
+    public InventoryManager getInventoryManager() {
+        return inventoryManager;
+    }
+
     @Override
     public void onEnable() {
         plugin = this;
         saveConfig(false);
         loadSavedFrozenLava();
 
-        Objects.requireNonNull(getCommand("givearmor")).setExecutor(new GiveArmor());
-        Objects.requireNonNull(getCommand("givearmor")).setTabCompleter(new GiveArmor());
-        Objects.requireNonNull(getCommand("setcharm")).setExecutor(new SetCharm());
-        Objects.requireNonNull(getCommand("setcharm")).setTabCompleter(new SetCharm());
-        Objects.requireNonNull(getCommand("givecharm")).setExecutor(new GiveCharm());
-        Objects.requireNonNull(getCommand("givecharm")).setTabCompleter(new GiveCharm());
-        Objects.requireNonNull(getCommand("bind")).setExecutor(new Bind());
-        Objects.requireNonNull(getCommand("bind")).setTabCompleter(new Bind());
-
-        getServer().getPluginManager().registerEvents(new AddCharm(), this);
-        getServer().getPluginManager().registerEvents(new SoulBinding(), this);
-
-        // air
-        getServer().getPluginManager().registerEvents(new SlowFall(), this);
-        getServer().getPluginManager().registerEvents(new DoubleJump(), this);
-        getServer().getPluginManager().registerEvents(new ElytraBoost(), this);
-        getServer().getPluginManager().registerEvents(new PushNearby(), this);
-        // fire
-        getServer().getPluginManager().registerEvents(new Fireproof(), this);
-        getServer().getPluginManager().registerEvents(new LavaWalking(), this);
-        getServer().getPluginManager().registerEvents(new FireThorns(), this);
-        getServer().getPluginManager().registerEvents(new Explosion(this), this);
-        // earth
-        getServer().getPluginManager().registerEvents(new Telekinesis(), this);
-        // water
-        getServer().getPluginManager().registerEvents(new FastSwim(), this);
+        // register commands & liseners & managers
+        registerManager();
+        registerCommands();
+        registerListeners();
 
         startRepeatingTasks();
     }
@@ -119,5 +101,42 @@ public final class Main extends JavaPlugin {
 
     private void startRepeatingTasks() {
         LavaWalking.startRepeatingTask();
+    }
+
+    // register all the plugins commands
+    // each constructor of the following classes registers
+    private void registerCommands() {
+        new GiveArmor(this);
+        new SetCharm(this);
+        new GiveCharm(this);
+        new Bind(this);
+        new GuiDebug(this);
+    }
+
+    // regiter the listeners of the plugin
+    private void registerListeners() {
+        PluginManager pm = getServer().getPluginManager();
+        pm.registerEvents(new AddCharm(), this);
+        pm.registerEvents(new SoulBinding(), this);
+
+        // air
+        pm.registerEvents(new SlowFall(), this);
+        pm.registerEvents(new DoubleJump(), this);
+        pm.registerEvents(new ElytraBoost(), this);
+        pm.registerEvents(new PushNearby(), this);
+        // fire
+        pm.registerEvents(new Fireproof(), this);
+        pm.registerEvents(new LavaWalking(), this);
+        pm.registerEvents(new FireThorns(), this);
+        pm.registerEvents(new Explosion(this), this);
+        // earth
+        pm.registerEvents(new Telekinesis(), this);
+        // water
+        pm.registerEvents(new FastSwim(), this);
+
+    }
+
+    private void registerManager() {
+        inventoryManager = new InventoryManager(this);
     }
 }
