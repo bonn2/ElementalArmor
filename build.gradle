@@ -1,6 +1,11 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
+plugins {
+    id 'com.github.johnrengelman.shadow' version '6.0.0'
+}
+
 apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
 
 group = 'ElementalArmor'
 version = '1.0-SNAPSHOT'
@@ -28,8 +33,15 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 
+shadowJar {
+    classifier ''
+    relocate 'me.mattstudios.mfgui', 'ca.minecore.elementalarmor.libs.mfgui'
+}
+
 processResources {
     from(sourceSets.main.resources.srcDirs) {
         filter ReplaceTokens, tokens: [version: version]
     }
 }
+
+tasks.build.dependsOn tasks.shadowJar

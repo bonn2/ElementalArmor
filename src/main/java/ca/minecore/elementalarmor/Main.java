@@ -47,7 +47,8 @@ public final class Main extends JavaPlugin {
         saveConfig(false);
         loadSavedFrozenLava();
 
-        // register commands & liseners
+        // register commands & liseners & managers
+        registerManager();
         registerCommands();
         registerListeners();
 
@@ -133,5 +134,9 @@ public final class Main extends JavaPlugin {
         // water
         pm.registerEvents(new FastSwim(), this);
 
+    }
+
+    private void registerManager() {
+        inventoryManager = new InventoryManager(this);
     }
 }
