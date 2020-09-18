@@ -109,6 +109,7 @@ public final class Main extends JavaPlugin {
         new SetCharm(this);
         new GiveCharm(this);
         new Bind(this);
+        new GuiDebug(this);
     }
 
     // regiter the listeners of the plugin
