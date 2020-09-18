@@ -21,7 +21,8 @@ public class ElytraBoost implements Listener {
         Player player = event.getPlayer();
         if (ArmorManager.isWearingCharm(player, Charm.ELYTRA_BOOST)) {
             if (player.isSprinting()) {
-                if (player.isGliding()) {
+                if (player.isGliding()
+                && !player.isSwimming()) {
                     if (counters.containsKey(player.getUniqueId()))
                         counters.get(player.getUniqueId()).increment(-1);
                     else
