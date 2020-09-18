@@ -24,7 +24,7 @@ public class GuiDebug implements CommandExecutor, @Nullable TabCompleter {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if (!sender.hasPermission("enigma.debug.gui") || !(sender instanceof Player)) return false;
+        if (!sender.hasPermission("elementalarmor.admin.debuggui") || !(sender instanceof Player)) return false;
 
         Player player = (Player) sender;
         plugin.getInventoryManager().getHomePage().getGui(player).open(player);

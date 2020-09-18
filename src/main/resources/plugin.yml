@@ -23,3 +23,7 @@ commands:
     description: Bind an armor piece to a player
     usage: /bind <player>
     permission: elementalarmor.admin.bind
+  guidebug:
+    description: Debug the GUI
+    usage: /guidebug
+    permission: elementalarmor.admin.debuggui
