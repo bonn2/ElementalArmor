@@ -20,6 +20,7 @@ import ca.minecore.elementalarmor.util.elements.fire.FrozenLava;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -108,23 +109,24 @@ public final class Main extends JavaPlugin {
 
     // regiter the listeners of the plugin
     private void registerListeners() {
-        getServer().getPluginManager().registerEvents(new AddCharm(), this);
-        getServer().getPluginManager().registerEvents(new SoulBinding(), this);
+        PluginManager pm = getServer().getPluginManager();
+        pm.registerEvents(new AddCharm(), this);
+        pm.registerEvents(new SoulBinding(), this);
 
         // air
-        getServer().getPluginManager().registerEvents(new SlowFall(), this);
-        getServer().getPluginManager().registerEvents(new DoubleJump(), this);
-        getServer().getPluginManager().registerEvents(new ElytraBoost(), this);
-        getServer().getPluginManager().registerEvents(new PushNearby(), this);
+        pm.registerEvents(new SlowFall(), this);
+        pm.registerEvents(new DoubleJump(), this);
+        pm.registerEvents(new ElytraBoost(), this);
+        pm.registerEvents(new PushNearby(), this);
         // fire
-        getServer().getPluginManager().registerEvents(new Fireproof(), this);
-        getServer().getPluginManager().registerEvents(new LavaWalking(), this);
-        getServer().getPluginManager().registerEvents(new FireThorns(), this);
-        getServer().getPluginManager().registerEvents(new Explosion(this), this);
+        pm.registerEvents(new Fireproof(), this);
+        pm.registerEvents(new LavaWalking(), this);
+        pm.registerEvents(new FireThorns(), this);
+        pm.registerEvents(new Explosion(this), this);
         // earth
-        getServer().getPluginManager().registerEvents(new Telekinesis(), this);
+        pm.registerEvents(new Telekinesis(), this);
         // water
-        getServer().getPluginManager().registerEvents(new FastSwim(), this);
+        pm.registerEvents(new FastSwim(), this);
 
     }
 }
