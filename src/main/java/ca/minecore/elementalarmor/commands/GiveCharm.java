@@ -1,11 +1,9 @@
 package ca.minecore.elementalarmor.commands;
 
+import ca.minecore.elementalarmor.Main;
 import ca.minecore.elementalarmor.util.emums.Charm;
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
+import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -14,6 +12,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GiveCharm implements CommandExecutor, TabCompleter {
+
+    private Main plugin;
+
+    public GiveCharm(Main plugin) {
+        this.plugin = plugin;
+        PluginCommand cmd = plugin.getCommand("givecharm");
+        if (cmd != null) {
+            cmd.setTabCompleter(this);
+            cmd.setExecutor(this);
+        } else plugin.getLogger().severe("Give Charm Command was null!");
+    }
+
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (args.length == 2) {
