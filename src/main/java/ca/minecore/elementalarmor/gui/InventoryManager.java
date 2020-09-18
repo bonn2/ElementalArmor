@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 public class InventoryManager {
 
     private Main plugin;
-    private HomePage homePage;
+    private final HomePage homePage;
 
     public InventoryManager(Main plugin) {
         this.plugin = plugin;
