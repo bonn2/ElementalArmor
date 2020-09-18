@@ -1,9 +1,6 @@
 package ca.minecore.elementalarmor;
 
-import ca.minecore.elementalarmor.commands.Bind;
-import ca.minecore.elementalarmor.commands.GiveArmor;
-import ca.minecore.elementalarmor.commands.GiveCharm;
-import ca.minecore.elementalarmor.commands.SetCharm;
+import ca.minecore.elementalarmor.commands.*;
 import ca.minecore.elementalarmor.gui.InventoryManager;
 import ca.minecore.elementalarmor.listeners.air.DoubleJump;
 import ca.minecore.elementalarmor.listeners.air.ElytraBoost;
@@ -60,6 +57,7 @@ public final class Main extends JavaPlugin {
         Objects.requireNonNull(getCommand("givecharm")).setTabCompleter(new GiveCharm());
         Objects.requireNonNull(getCommand("bind")).setExecutor(new Bind());
         Objects.requireNonNull(getCommand("bind")).setTabCompleter(new Bind());
+        new GuiDebug(this);
 
         getServer().getPluginManager().registerEvents(new AddCharm(), this);
         getServer().getPluginManager().registerEvents(new SoulBinding(), this);
