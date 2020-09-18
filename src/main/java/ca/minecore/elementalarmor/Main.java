@@ -15,6 +15,7 @@ import ca.minecore.elementalarmor.listeners.fire.Fireproof;
 import ca.minecore.elementalarmor.listeners.fire.LavaWalking;
 import ca.minecore.elementalarmor.listeners.util.AddCharm;
 import ca.minecore.elementalarmor.listeners.util.SoulBinding;
+import ca.minecore.elementalarmor.listeners.water.FastSwim;
 import ca.minecore.elementalarmor.util.elements.fire.FrozenLava;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -66,6 +67,8 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Explosion(this), this);
         // earth
         getServer().getPluginManager().registerEvents(new Telekinesis(), this);
+        // water
+        getServer().getPluginManager().registerEvents(new FastSwim(), this);
 
         startRepeatingTasks();
     }
