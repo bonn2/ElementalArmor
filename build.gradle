@@ -22,6 +22,8 @@ repositories {
 
 dependencies {
     implementation 'org.jetbrains:annotations:19.0.0'
+    implementation "me.mattstudios.utils:matt-framework-gui:2.0.2"
+
     compileOnly 'org.spigotmc:spigot-api:1.16.3-R0.1-SNAPSHOT'
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
