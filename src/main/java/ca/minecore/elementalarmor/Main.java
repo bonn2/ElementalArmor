@@ -31,14 +31,14 @@ public final class Main extends JavaPlugin {
     public static Main plugin;
     public static YamlConfiguration data;
 
+    static {
+        ConfigurationSerialization.registerClass(FrozenLava.class, "FrozenLava");
+    }
+
     private InventoryManager inventoryManager;
 
     public InventoryManager getInventoryManager() {
         return inventoryManager;
-    }
-
-    static {
-        ConfigurationSerialization.registerClass(FrozenLava.class, "FrozenLava");
     }
 
     @Override

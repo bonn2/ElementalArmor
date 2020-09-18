@@ -11,8 +11,8 @@ import org.bukkit.entity.Player;
  */
 public class InventoryManager {
 
-    private Main plugin;
     private final HomePage homePage;
+    private Main plugin;
 
     public InventoryManager(Main plugin) {
         this.plugin = plugin;
@@ -21,7 +21,8 @@ public class InventoryManager {
 
     /**
      * Method to open any of the GUI's
-     * @param gui - the AbstractEnigmaGUI that we want to open
+     *
+     * @param gui    - the AbstractEnigmaGUI that we want to open
      * @param player - the player who we are opening it for
      */
     public void openGui(AbstractEnigmaGUI gui, Player player) {
