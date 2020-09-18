@@ -4,6 +4,7 @@ import ca.minecore.elementalarmor.commands.Bind;
 import ca.minecore.elementalarmor.commands.GiveArmor;
 import ca.minecore.elementalarmor.commands.GiveCharm;
 import ca.minecore.elementalarmor.commands.SetCharm;
+import ca.minecore.elementalarmor.gui.InventoryManager;
 import ca.minecore.elementalarmor.listeners.air.DoubleJump;
 import ca.minecore.elementalarmor.listeners.air.ElytraBoost;
 import ca.minecore.elementalarmor.listeners.air.PushNearby;
@@ -33,6 +34,12 @@ public final class Main extends JavaPlugin {
     public static Main plugin;
     public static YamlConfiguration data;
 
+    private InventoryManager inventoryManager;
+
+    public InventoryManager getInventoryManager() {
+        return inventoryManager;
+    }
+
     static {
         ConfigurationSerialization.registerClass(FrozenLava.class, "FrozenLava");
     }
@@ -42,6 +49,8 @@ public final class Main extends JavaPlugin {
         plugin = this;
         saveConfig(false);
         loadSavedFrozenLava();
+
+        inventoryManager = new InventoryManager(this);
 
         Objects.requireNonNull(getCommand("givearmor")).setExecutor(new GiveArmor());
         Objects.requireNonNull(getCommand("givearmor")).setTabCompleter(new GiveArmor());
