@@ -10,7 +10,7 @@ import java.util.List;
 
 public class GuiDebug implements CommandExecutor, @Nullable TabCompleter {
 
-    private Main plugin;
+    private final Main plugin;
 
     public GuiDebug(Main plugin) {
         this.plugin = plugin;
