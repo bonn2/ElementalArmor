@@ -31,7 +31,8 @@ public class ElytraBoost implements Listener {
                     if (!counters.get(player.getUniqueId()).isEmpty())
                         player.setVelocity(player.getLocation().getDirection().multiply(2));
                 } else if (counters.containsKey(player.getUniqueId())
-                && !counters.get(player.getUniqueId()).isFull()) {
+                && !counters.get(player.getUniqueId()).isFull()
+                && !player.isSwimming()) {
                     counters.get(player.getUniqueId()).increment(1);
                     counters.get(player.getUniqueId()).draw(player);
                 }
