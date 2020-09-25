@@ -22,7 +22,6 @@ public class TurnToStone implements Listener {
             Player player = (Player) event.getEntity();
             if(ArmorManager.isWearingCharm(player, Charm.TURN_TO_STONE)){
                 Vector v = player.getVelocity();
-                System.out.println(v.toString());
                 if(v.distance(new Vector(0, -0.0784000015258789, 0)) == 0){
                     double reductionFactor = 2;         //can be adjusted later when progression is added. A 2 equals 1/2 dmg is taken.
                     double dmg = event.getFinalDamage();
