@@ -7,6 +7,7 @@ import ca.minecore.elementalarmor.listeners.air.ElytraBoost;
 import ca.minecore.elementalarmor.listeners.air.PushNearby;
 import ca.minecore.elementalarmor.listeners.air.SlowFall;
 import ca.minecore.elementalarmor.listeners.earth.Telekinesis;
+import ca.minecore.elementalarmor.listeners.earth.TurnToStone;
 import ca.minecore.elementalarmor.listeners.fire.Explosion;
 import ca.minecore.elementalarmor.listeners.fire.FireThorns;
 import ca.minecore.elementalarmor.listeners.fire.Fireproof;
@@ -130,6 +131,7 @@ public final class Main extends JavaPlugin {
         pm.registerEvents(new FireThorns(), this);
         pm.registerEvents(new Explosion(this), this);
         // earth
+        pm.registerEvents(new TurnToStone(), this);
         pm.registerEvents(new Telekinesis(), this);
         // water
         pm.registerEvents(new FastSwim(), this);
