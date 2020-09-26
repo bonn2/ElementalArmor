@@ -22,6 +22,7 @@ public enum Charm {
 
     // Earth charms
     TELEKINESIS(ArmorType.EARTH, ChatColor.GREEN + "Telekinesis", Material.GHAST_TEAR),
+    TURN_TO_STONE(ArmorType.EARTH, ChatColor.GRAY + "Turn to Stone", Material.COBBLESTONE_WALL),
 
     // Water charms
     FAST_SWIM(ArmorType.WATER, ChatColor.BLUE + "Fast Swim", Material.LAPIS_LAZULI),
