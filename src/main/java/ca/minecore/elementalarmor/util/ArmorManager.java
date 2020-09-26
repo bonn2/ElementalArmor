@@ -1,9 +1,9 @@
 package ca.minecore.elementalarmor.util;
 
 import ca.minecore.elementalarmor.Main;
-import ca.minecore.elementalarmor.util.emums.ArmorPiece;
-import ca.minecore.elementalarmor.util.emums.ArmorType;
-import ca.minecore.elementalarmor.util.emums.Charm;
+import ca.minecore.elementalarmor.util.enums.ArmorPiece;
+import ca.minecore.elementalarmor.util.enums.ArmorType;
+import ca.minecore.elementalarmor.util.enums.Charm;
 import ca.minecore.elementalarmor.util.persistence.PersistentArmorType;
 import ca.minecore.elementalarmor.util.persistence.PersistentCharmType;
 import org.bukkit.NamespacedKey;
@@ -19,6 +19,12 @@ public class ArmorManager {
     private static final NamespacedKey TYPE = new NamespacedKey(Main.plugin, "TYPE");
     private static final NamespacedKey CHARM = new NamespacedKey(Main.plugin, "CHARM");
 
+    /**
+     * Check whether a player is wearing a complete set of armor
+     * @param player The player to check
+     * @param type The ArmorType to check for
+     * @return If the user is wearing a fullset
+     */
     public static boolean isWearingFullSet(Player player, ArmorType type) {
         boolean output = true;
         try {
@@ -33,6 +39,12 @@ public class ArmorManager {
         }
     }
 
+    /**
+     * Check whether a player is wearing a charm
+     * @param player The player to check
+     * @param charm The charm to check for
+     * @return If the player is wearing a charm
+     */
     public static boolean isWearingCharm(Player player, Charm charm) {
         boolean output = false;
         for (ItemStack item : player.getInventory().getArmorContents()) {
@@ -47,6 +59,12 @@ public class ArmorManager {
         return output;
     }
 
+    /**
+     * Check if an item has a charm
+     * @param item The item to check
+     * @param charm The charm to check for
+     * @return Whether the item has the charm
+     */
     public static boolean hasCharm(ItemStack item, Charm charm) {
         try {
             return item.getItemMeta().getPersistentDataContainer().getOrDefault(CHARM, new PersistentCharmType(), Charm.NONE).equals(charm);
@@ -55,6 +73,11 @@ public class ArmorManager {
         }
     }
 
+    /**
+     * Get the charm type stored on the item
+     * @param item
+     * @return
+     */
     public static Charm getCharm(ItemStack item) {
         try {
             return item.getItemMeta().getPersistentDataContainer().getOrDefault(CHARM, new PersistentCharmType(), Charm.NONE);

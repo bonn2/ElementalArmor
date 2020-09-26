@@ -1,7 +1,7 @@
 package ca.minecore.elementalarmor.listeners.fire;
 
 import ca.minecore.elementalarmor.util.ArmorManager;
-import ca.minecore.elementalarmor.util.emums.ArmorType;
+import ca.minecore.elementalarmor.util.enums.ArmorType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

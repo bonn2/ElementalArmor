@@ -1,7 +1,7 @@
 package ca.minecore.elementalarmor.listeners.earth;
 
 import ca.minecore.elementalarmor.util.ArmorManager;
-import ca.minecore.elementalarmor.util.emums.Charm;
+import ca.minecore.elementalarmor.util.enums.Charm;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;

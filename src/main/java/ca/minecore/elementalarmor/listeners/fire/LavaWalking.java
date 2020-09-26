@@ -3,7 +3,7 @@ package ca.minecore.elementalarmor.listeners.fire;
 import ca.minecore.elementalarmor.Main;
 import ca.minecore.elementalarmor.util.ArmorManager;
 import ca.minecore.elementalarmor.util.elements.fire.FrozenLava;
-import ca.minecore.elementalarmor.util.emums.Charm;
+import ca.minecore.elementalarmor.util.enums.Charm;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;

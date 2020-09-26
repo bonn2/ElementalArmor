@@ -1,9 +1,9 @@
 package ca.minecore.elementalarmor.util;
 
 import ca.minecore.elementalarmor.Main;
-import ca.minecore.elementalarmor.util.emums.ArmorPiece;
-import ca.minecore.elementalarmor.util.emums.ArmorType;
-import ca.minecore.elementalarmor.util.emums.Charm;
+import ca.minecore.elementalarmor.util.enums.ArmorPiece;
+import ca.minecore.elementalarmor.util.enums.ArmorType;
+import ca.minecore.elementalarmor.util.enums.Charm;
 import ca.minecore.elementalarmor.util.exceptions.InvalidCharmException;
 import ca.minecore.elementalarmor.util.persistence.PersistentArmorType;
 import ca.minecore.elementalarmor.util.persistence.PersistentCharmType;

@@ -1,6 +1,6 @@
 package ca.minecore.elementalarmor.util.persistence;
 
-import ca.minecore.elementalarmor.util.emums.ArmorType;
+import ca.minecore.elementalarmor.util.enums.ArmorType;
 import org.bukkit.persistence.PersistentDataAdapterContext;
 import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;

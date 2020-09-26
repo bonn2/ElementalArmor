@@ -1,4 +1,4 @@
-package ca.minecore.elementalarmor.util.emums;
+package ca.minecore.elementalarmor.util.enums;
 
 public enum ArmorPiece {
     HELMET(0, "Helmet"),

@@ -4,7 +4,7 @@ import ca.minecore.elementalarmor.Main;
 import ca.minecore.elementalarmor.util.ArmorManager;
 import ca.minecore.elementalarmor.util.ChatUtil;
 import ca.minecore.elementalarmor.util.Counter;
-import ca.minecore.elementalarmor.util.emums.Charm;
+import ca.minecore.elementalarmor.util.enums.Charm;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

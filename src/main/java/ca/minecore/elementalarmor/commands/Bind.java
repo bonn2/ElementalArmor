@@ -3,7 +3,7 @@ package ca.minecore.elementalarmor.commands;
 import ca.minecore.elementalarmor.Main;
 import ca.minecore.elementalarmor.util.ArmorManager;
 import ca.minecore.elementalarmor.util.CustomArmor;
-import ca.minecore.elementalarmor.util.emums.ArmorType;
+import ca.minecore.elementalarmor.util.enums.ArmorType;
 import org.bukkit.Bukkit;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;

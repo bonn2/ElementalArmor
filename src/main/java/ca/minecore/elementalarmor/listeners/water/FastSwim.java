@@ -2,7 +2,7 @@ package ca.minecore.elementalarmor.listeners.water;
 
 import ca.minecore.elementalarmor.util.ArmorManager;
 import ca.minecore.elementalarmor.util.Counter;
-import ca.minecore.elementalarmor.util.emums.Charm;
+import ca.minecore.elementalarmor.util.enums.Charm;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

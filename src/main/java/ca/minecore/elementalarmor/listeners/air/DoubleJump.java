@@ -1,7 +1,7 @@
 package ca.minecore.elementalarmor.listeners.air;
 
 import ca.minecore.elementalarmor.util.ArmorManager;
-import ca.minecore.elementalarmor.util.emums.ArmorType;
+import ca.minecore.elementalarmor.util.enums.ArmorType;
 import ca.minecore.elementalarmor.Main;
 import com.codingforcookies.armorequip.ArmorEquipEvent;
 import org.bukkit.GameMode;

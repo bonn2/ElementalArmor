@@ -1,6 +1,6 @@
 package ca.minecore.elementalarmor.util.exceptions;
 
-import ca.minecore.elementalarmor.util.emums.ArmorType;
+import ca.minecore.elementalarmor.util.enums.ArmorType;
 import org.bukkit.ChatColor;
 
 public class InvalidCharmException extends Exception {

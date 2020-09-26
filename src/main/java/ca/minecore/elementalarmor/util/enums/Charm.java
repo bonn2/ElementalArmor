@@ -1,4 +1,4 @@
-package ca.minecore.elementalarmor.util.emums;
+package ca.minecore.elementalarmor.util.enums;
 
 import ca.minecore.elementalarmor.Main;
 import ca.minecore.elementalarmor.util.ChatUtil;
@@ -10,7 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public enum Charm {
-    // Air charms
+    // Fire charms
     FIRE_THORNS(ArmorType.FIRE, ChatColor.GOLD + "Fire Thorns", Material.BLAZE_POWDER),
     LAVA_WALKING(ArmorType.FIRE, ChatColor.GOLD + "Lava Walking", Material.MAGMA_CREAM),
     EXPLOSION(ArmorType.FIRE, ChatColor.GOLD + "Explosion", Material.TNT),

@@ -1,4 +1,4 @@
-package ca.minecore.elementalarmor.util.emums;
+package ca.minecore.elementalarmor.util.enums;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

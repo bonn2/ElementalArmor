@@ -2,8 +2,8 @@ package ca.minecore.elementalarmor.listeners.util;
 
 import ca.minecore.elementalarmor.util.ArmorManager;
 import ca.minecore.elementalarmor.util.CustomArmor;
-import ca.minecore.elementalarmor.util.emums.ArmorType;
-import ca.minecore.elementalarmor.util.emums.Charm;
+import ca.minecore.elementalarmor.util.enums.ArmorType;
+import ca.minecore.elementalarmor.util.enums.Charm;
 import ca.minecore.elementalarmor.util.exceptions.InvalidCharmException;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

@@ -1,7 +1,7 @@
 package ca.minecore.elementalarmor.commands;
 
 import ca.minecore.elementalarmor.Main;
-import ca.minecore.elementalarmor.util.emums.Charm;
+import ca.minecore.elementalarmor.util.enums.Charm;
 import org.bukkit.Bukkit;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
